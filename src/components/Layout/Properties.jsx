@@ -34,7 +34,7 @@ const Properties = () => {
       <section className="mx-auto bg-silver px-10 md:px-16 lg:px-20 py-20 pt-20 md:py-16">
         <div className="px-auto lg:px-32 mb-6">
           <h1 className="font-Poppins font-bold text-3xl text-center mb-4">
-            Our Most Popular <span className="text-blue">Trending</span>
+          Explore Our Listed  <span className="text-blue">Properties</span>
           </h1>
           <p className="text-center text-ash">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore

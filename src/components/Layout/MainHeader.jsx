@@ -59,16 +59,56 @@ const MainHeader = () => {
         </li>
         <li className="py-3">
           <NavLink
-            to="/agent"
+            to="/brands"
             activeclassname="text-blue"
             onClick={menuHandler}
           >
-            Agents
+           Our Brands
           </NavLink>
         </li>
         <li className="py-3">
-          <NavLink to="/blog" activeclassname="text-blue" onClick={menuHandler}>
-            Blog
+          <NavLink
+            to="/brands"
+            activeclassname="text-blue"
+            onClick={menuHandler}
+          >
+            Invest
+          </NavLink>
+        </li>
+        <li className="py-3">
+          <NavLink
+            to="/brands"
+            activeclassname="text-blue"
+            onClick={menuHandler}
+          >
+            Plots
+          </NavLink>
+        </li>
+        <li className="py-3">
+          <NavLink
+            to="/brands"
+            activeclassname="text-blue"
+            onClick={menuHandler}
+          >
+            Khoties And Villas
+          </NavLink>
+        </li>
+        <li className="py-3">
+          <NavLink
+            to="/brands"
+            activeclassname="text-blue"
+            onClick={menuHandler}
+          >
+            Listing
+          </NavLink>
+        </li>
+        <li className="py-3">
+          <NavLink
+            to="/brands"
+            activeclassname="text-blue"
+            onClick={menuHandler}
+          >
+            Home Loan
           </NavLink>
         </li>
       </ul>

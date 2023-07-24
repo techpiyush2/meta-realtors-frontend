@@ -7,17 +7,19 @@ import Blog from "../components/Layout/BlogSection";
 import Testimonial from "../components/Layout/Testimonial";
 import FAQs from "../components/Layout/FAQs";
 import Footer from "../components/Layout/Footer";
+import Consult from "../components/Layout/Consult";
 
 const HomePage = () => {
   return (
     <Fragment>
       <Hero />
       <Purpose />
+      <Consult/>
       <Properties />
-      <OurService />
+      {/* <OurService />
       <Blog />
       <Testimonial />
-      <FAQs />
+      <FAQs /> */}
       <Footer />
     </Fragment>
   );
