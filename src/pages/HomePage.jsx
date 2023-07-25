@@ -8,6 +8,7 @@ import Testimonial from "../components/Layout/Testimonial";
 import FAQs from "../components/Layout/FAQs";
 import Footer from "../components/Layout/Footer";
 import Consult from "../components/Layout/Consult";
+import BrandList from "../components/Layout/BrandList";
 
 const HomePage = () => {
   return (
@@ -16,10 +17,10 @@ const HomePage = () => {
       <Purpose />
       <Consult/>
       <Properties />
-      {/* <OurService />
+      <BrandList/>
       <Blog />
       <Testimonial />
-      <FAQs /> */}
+      <FAQs />
       <Footer />
     </Fragment>
   );

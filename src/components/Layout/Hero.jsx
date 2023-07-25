@@ -12,8 +12,10 @@ const Hero = () => {
           </h1>
           <p className="font-Poppins  text-white ">With the most complete source of homes for sale & real estate near you
           </p>
-          <div className="max-w-16">
-          <HeroForm />
+          <div className="flex justify-center items-center">
+         <div className="w-2/3" >
+         <HeroForm />
+         </div>
           </div>
         </div>
       </div>

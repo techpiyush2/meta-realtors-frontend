@@ -19,7 +19,7 @@ const HeroForm = () => {
   };
 
   return (
-    <div className="mx-auto  mt-20 rounded-xl bg-silverLite shadow-md p-4 px-2 ">
+    <div className="mx-auto  mt-20 rounded-xl bg-silverLite shadow-md p-3 ">
   
         <form onSubmit={handleSearch} className="flex  items-center w-full">
           <label htmlFor="text"></label>

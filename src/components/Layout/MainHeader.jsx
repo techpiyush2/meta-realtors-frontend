@@ -43,12 +43,12 @@ const MainHeader = () => {
   const mobileMenu = (
     <div className="w-11/12 max-w-2xl mt-4 lg:hidden">
       <ul className=" flex-col px-6 text-ash  ">
-        <li className="py-3">
+        <li className="py-3  hover:text-blue" >
           <NavLink to="/home" activeclassname="text-blue" onClick={menuHandler}>
             Home
           </NavLink>
         </li>
-        <li className="py-3">
+        <li className="py-3  hover:text-blue">
           <NavLink
             to="/listings"
             activeclassname="text-blue"
@@ -57,7 +57,7 @@ const MainHeader = () => {
             Properties
           </NavLink>
         </li>
-        <li className="py-3">
+        <li className="py-3  hover:text-blue">
           <NavLink
             to="/brands"
             activeclassname="text-blue"
@@ -66,7 +66,7 @@ const MainHeader = () => {
            Our Brands
           </NavLink>
         </li>
-        <li className="py-3">
+        <li className="py-3  hover:text-blue">
           <NavLink
             to="/brands"
             activeclassname="text-blue"
@@ -75,7 +75,7 @@ const MainHeader = () => {
             Invest
           </NavLink>
         </li>
-        <li className="py-3">
+        <li className="py-3  hover:text-blue">
           <NavLink
             to="/brands"
             activeclassname="text-blue"
@@ -84,7 +84,7 @@ const MainHeader = () => {
             Plots
           </NavLink>
         </li>
-        <li className="py-3">
+        <li className="py-3  hover:text-blue">
           <NavLink
             to="/brands"
             activeclassname="text-blue"
@@ -93,7 +93,7 @@ const MainHeader = () => {
             Khoties And Villas
           </NavLink>
         </li>
-        <li className="py-3">
+        <li className="py-3  hover:text-blue">
           <NavLink
             to="/brands"
             activeclassname="text-blue"
@@ -102,7 +102,7 @@ const MainHeader = () => {
             Listing
           </NavLink>
         </li>
-        <li className="py-3">
+        <li className="py-3  hover:text-blue">
           <NavLink
             to="/brands"
             activeclassname="text-blue"
@@ -143,43 +143,43 @@ const MainHeader = () => {
             <img src={Logo} alt="macho-logo" className="w-full" />
           </div>
         </div>
-        <ul className=" hidden lg:flex px-6 text-ash  ">
-          <li>
+        <ul className=" hidden lg:flex px-6 text-ash ">
+          <li className=" hover:text-blue">
             <NavLink to="/home" activeclassname="text-blue" className="px-4">
               Home
             </NavLink>
           </li>
-          <li>
+          <li className=" hover:text-blue">
             <NavLink to="/brands" activeclassname="text-blue" className="px-4">
               Our brands
             </NavLink>
           </li>
-          <li>
+          <li className=" hover:text-blue">
             <NavLink to="/invest" activeclassname="text-blue" className="px-4 ">
               Invest
             </NavLink>
           </li>
-           <li>
+           <li className=" hover:text-blue">
             <NavLink to="/plots" activeclassname="text-blue" className="px-4 ">
               Plots
             </NavLink>
           </li>
-          <li>
+          <li className=" hover:text-blue">
             <NavLink to="/flats" activeclassname="text-blue" className="px-4 ">
               Flats
             </NavLink>
           </li>
-          <li>
+          <li className=" hover:text-blue">
             <NavLink to="/khoties" activeclassname="text-blue" className="px-4 ">
               Khoties & Villas
             </NavLink>
           </li>
-          <li>
+          <li className=" hover:text-blue">
             <NavLink to="/listings" activeclassname="text-blue" className="px-4 ">
               Listing
             </NavLink>
           </li>
-          <li>
+          <li className=" hover:text-blue">
             <NavLink to="/homeLoan" activeclassname="text-blue" className="px-4 ">
               Home Loan
             </NavLink>

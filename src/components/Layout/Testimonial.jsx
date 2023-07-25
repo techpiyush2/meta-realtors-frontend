@@ -11,6 +11,12 @@ const testimonialData = [
   {
     id: "p1",
     text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus, eaque blanditiis! Esse nostrum deleniti asperiores blanditiis rerum illo hic eius magni ratione. Repellendus, rerum veritatis!",
+    name: "Noah Emma",
+    image: Client4,
+  },
+  {
+    id: "p4",
+    text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus, eaque blanditiis! Esse nostrum deleniti asperiores blanditiis rerum illo hic eius magni ratione. Repellendus, rerum veritatis!",
     name: "Emily Josh",
     image: Client1,
   },
@@ -26,12 +32,7 @@ const testimonialData = [
     name: "Olivia Ava",
     image: Client3,
   },
-  {
-    id: "p4",
-    text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus, eaque blanditiis! Esse nostrum deleniti asperiores blanditiis rerum illo hic eius magni ratione. Repellendus, rerum veritatis!",
-    name: "Noah Emma",
-    image: Client4,
-  },
+
 ];
 
 const Testimonial = () => {
