@@ -9,6 +9,9 @@ import FAQs from "../components/Layout/FAQs";
 import Footer from "../components/Layout/Footer";
 import Consult from "../components/Layout/Consult";
 import BrandList from "../components/Layout/BrandList";
+import AssociatedProjects from "../components/Layout/AssociatedProjects";
+
+
 
 const HomePage = () => {
   return (
@@ -19,6 +22,7 @@ const HomePage = () => {
       {/* <Properties /> */}
       <BrandList/>
       {/* <Blog /> */}
+      <AssociatedProjects/>
       <Testimonial />
       <FAQs />
       <Footer />
