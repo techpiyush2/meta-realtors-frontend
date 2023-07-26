@@ -47,7 +47,7 @@ const AssociatedProjects = () => {
           >
             {trigger && <CountUp start={0} end={30} duration={2} />}+
           </span>
-          <p>Years in Busines</p>
+          <p>Years in Business</p>
         </div>
         </div>
       </div>
