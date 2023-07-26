@@ -41,7 +41,7 @@ const Properties = () => {
             facilis libero, esse recusandae nam veniam aut accusamus.
           </p>
         </div>
-        <ul className="flex justify-center flex-col lg:flex-row lg:justify-between ">
+        <ul className="flex justify-center flex-col lg:flex-row">
           {isFetching && <Loader />}
           {!isFetching && !error && mappedList}
           {!isFetching && mappedList?.length === 0 && <Error />}

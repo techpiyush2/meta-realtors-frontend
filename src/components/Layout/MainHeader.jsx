@@ -170,7 +170,7 @@ const MainHeader = () => {
             </NavLink>
           </li>
           <li className=" hover:text-blue">
-            <NavLink to="/khoties" activeclassname="text-blue" className="px-4 ">
+            <NavLink to="/kothi-villas" activeclassname="text-blue" className="px-4 ">
               Khoties & Villas
             </NavLink>
           </li>
@@ -180,11 +180,12 @@ const MainHeader = () => {
             </NavLink>
           </li>
           <li className=" hover:text-blue">
-            <NavLink to="/homeLoan" activeclassname="text-blue" className="px-4 ">
+            <NavLink to="/home-loan" activeclassname="text-blue" className="px-4 ">
               Home Loan
             </NavLink>
           </li>
-     
+ 
+
         </ul>
         <div className="pl-18 hidden lg:flex ">
           <button

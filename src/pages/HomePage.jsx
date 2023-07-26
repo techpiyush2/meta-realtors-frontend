@@ -16,9 +16,9 @@ const HomePage = () => {
       <Hero />
       <Purpose />
       <Consult/>
-      <Properties />
+      {/* <Properties /> */}
       <BrandList/>
-      <Blog />
+      {/* <Blog /> */}
       <Testimonial />
       <FAQs />
       <Footer />
