@@ -4,10 +4,12 @@ import BlogItems from "../Data/BlogItems";
 import Error from "../UI/Error";
 import Loader from "../UI/Loader";
 
-import { useGetRealEstateNewsQuery } from "../../redux/services/newsCatcher";
+import { useBlogListMutation
+ } from "../../redux/services/blogSlice";
 
 const Blog = () => {
-  const { data, isFetching, error } = useGetRealEstateNewsQuery();
+  const { data, isFetching, error } = useBlogListMutation
+();
   const resData = data?.articles.slice(0, 4);
 
   const mappedList = resData?.map((blog) => {

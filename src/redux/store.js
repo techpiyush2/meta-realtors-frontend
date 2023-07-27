@@ -1,21 +1,21 @@
 import { configureStore } from "@reduxjs/toolkit";
 import authReducer from "./features/authSlice";
 import { bayutApi } from "./services/bayut";
-import { newsCatcherApi } from "./services/newsCatcher";
-import { firebaseAPI } from "./services/firebase";
+import { blogApiSlice } from "./services/blogSlice";
+import { userApiSlice } from "./services/userSlice";
 
 const store = configureStore({
   reducer: {
     [bayutApi.reducerPath]: bayutApi.reducer,
-    [newsCatcherApi.reducerPath]: newsCatcherApi.reducer,
-    [firebaseAPI.reducerPath]: firebaseAPI.reducer,
+    [blogApiSlice.reducerPath]: blogApiSlice.reducer,
+    [userApiSlice.reducerPath]: userApiSlice.reducer,
     auth: authReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(
       bayutApi.middleware,
-      newsCatcherApi.middleware,
-      firebaseAPI.middleware
+      blogApiSlice.middleware,
+      userApiSlice.middleware
     ),
 });
 

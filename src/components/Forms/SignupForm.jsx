@@ -1,23 +1,19 @@
 import React, { useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import SignupImage from "../../assets/Signup.jpg";
-import { useSignupMutation } from "../../redux/services/firebase";
-import { login, setActiveUser } from "../../redux/features/authSlice";
-import { useDispatch } from "react-redux";
-// import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
+import { useRegisterMutation } from "../../redux/services/userSlice";
+
 
 const SignupForm = () => {
-  // const [show, setShow] = useState(false);
-  // const handleClick = () => setShow(!show);
+
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState(null);
   const emailInputRef = useRef();
   const passwordInputRef = useRef();
-  const history = useNavigate();
+  const navigate = useNavigate();
 
-
-  const dispatch = useDispatch();
-
+  const [signUp] = useRegisterMutation();
+  
   const handleSubmit = async (event) => {
     event.preventDefault();
     setIsLoading(true);
@@ -28,22 +24,18 @@ const SignupForm = () => {
     const formData = {
       email: enteredEmail,
       password: enteredPassword,
-      returnSecureToken: true,
     };
 
     try {
-      const user = await signup(formData).unwrap();
+      const user = await signUp(formData).unwrap();
+   
       if (!user) {
         throw new Error("Authentication Failed!");
       }
-      dispatch(login(user.idToken));
-      dispatch(setActiveUser(user.email));
-      history.replace("/");
-      // console.log(user);
+       
+      navigate("/login");
     } catch (error) {
-      const { message } = error.data.error;
-      setErrorMessage(message);
-      console.log(message);
+      console.log('error',error);
     }
     setIsLoading(false);
   };

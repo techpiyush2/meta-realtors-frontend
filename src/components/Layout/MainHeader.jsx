@@ -104,11 +104,11 @@ const MainHeader = () => {
         </li>
         <li className="py-3  hover:text-blue">
           <NavLink
-            to="/brands"
+            to="/blogs"
             activeclassname="text-blue"
             onClick={menuHandler}
           >
-            Home Loan
+            Blogs
           </NavLink>
         </li>
       </ul>
@@ -180,8 +180,8 @@ const MainHeader = () => {
             </NavLink>
           </li>
           <li className=" hover:text-blue">
-            <NavLink to="/home-loan" activeclassname="text-blue" className="px-4 ">
-              Home Loan
+            <NavLink to="/blog" activeclassname="text-blue" className="px-4 ">
+              Blogs
             </NavLink>
           </li>
  

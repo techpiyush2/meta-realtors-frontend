@@ -20,7 +20,7 @@ const BlogItem = ({ id, title, date, link }) => {
           </div>
           <div className="font-Poppins pl-1">
             <div className="flex  text-xs py-1 text-ash">
-              <FiClock className="mr-2" /> <p>{date}</p>
+              {/* <FiClock className="mr-2" /> <p>{date}</p> */}
             </div>
             <h1 className="text-base">{title}</h1>
           </div>

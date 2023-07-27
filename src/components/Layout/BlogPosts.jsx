@@ -1,23 +1,50 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect,useState } from "react";
 import BlogItems from "../Data/BlogItems";
 import Error from "../UI/Error";
 import Loader from "../UI/Loader";
 
-import { useGetRealEstateNewsQuery } from "../../redux/services/newsCatcher";
+import { useBlogListMutation} from "../../redux/services/blogSlice";
+
 
 const BlogPosts = () => {
-  const { data, isFetching, error } = useGetRealEstateNewsQuery();
-  const resData = data?.articles;
-  console.log(data?.articles);
 
+  const [isLoading, setIsLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState(null);
+  const [resData, setResData] = useState(null);
+
+
+  const [blogList] = useBlogListMutation();
+  
+  useEffect(()=>{
+    const handleSubmit = async (event) => {
+      setIsLoading(true);
+  
+      try {
+        const res = await blogList().unwrap();
+        console.log(res);
+        if (!res) {
+          throw new Error("Data Fetch Failed!");
+        }
+        
+        setResData(res.data)
+      } catch (error) {
+        console.log('error',error);
+      }
+      setIsLoading(false);
+    };
+    
+    handleSubmit()
+    
+  },[])
+  
   const mappedList = resData?.map((blog) => {
     return (
       <BlogItems
         key={blog._id}
         id={blog._id}
         title={blog.title}
-        date={blog.published_date}
-        url={blog.link}
+        // date={blog.published_date}
+        // url={blog.link}
       />
     );
   });
@@ -38,9 +65,9 @@ const BlogPosts = () => {
           </div>
         </div>
         <ul className="flex justify-center flex-col lg:flex-row lg:flex-wrap">
-          {isFetching && <Loader />}
-          {!isFetching && !error && mappedList}
-          {!isFetching && mappedList.length === 0 && <Error />}
+          {isLoading && <Loader />}
+          {!isLoading && mappedList}
+          {/* {!isLoading && mappedList.length === 0 && <Error />} */}
         </ul>
       </section>
     </Fragment>

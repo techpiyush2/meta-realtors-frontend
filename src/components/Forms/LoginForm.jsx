@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import LoginImage from "../../assets/Signup.jpg";
-import { useLogInMutation } from "../../redux/services/firebase";
+import { useLoginMutation } from "../../redux/services/userSlice";
 import { login, setActiveUser } from "../../redux/features/authSlice";
 import { useDispatch } from "react-redux";
 
@@ -10,8 +10,8 @@ const LoginForm = () => {
   const [errorMessage, setErrorMessage] = useState(null);
   const emailInputRef = useRef();
   const passwordInputRef = useRef();
-  const history = useNavigate();
-  const [logIn] = useLogInMutation();
+  const navigate = useNavigate();
+  const [logIn] = useLoginMutation();
 
   const dispatch = useDispatch();
 
@@ -25,22 +25,20 @@ const LoginForm = () => {
     const formData = {
       email: enteredEmail,
       password: enteredPassword,
-      returnSecureToken: true,
     };
 
     try {
       const user = await logIn(formData).unwrap();
+      console.log(user);
       if (!user) {
         throw new Error("Authentication Failed!");
       }
-      dispatch(login(user.idToken));
-      dispatch(setActiveUser(user.email));
-      history.replace("/");
-      // console.log(user);
+      dispatch(login(user.data.token));
+      dispatch(setActiveUser(user.data.userInfo.email));
+      navigate("/home");
+   
     } catch (error) {
-      const { message } = error.data.error;
-      setErrorMessage(message);
-      console.log(message);
+      console.log('error something', error);
     }
     setIsLoading(false);
   };
