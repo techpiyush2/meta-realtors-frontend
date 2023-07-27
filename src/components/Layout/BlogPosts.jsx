@@ -43,7 +43,7 @@ const BlogPosts = () => {
         key={blog._id}
         id={blog._id}
         title={blog.title}
-        // date={blog.published_date}
+        date={blog.blogyr}
         // url={blog.link}
       />
     );

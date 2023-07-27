@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment,useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import BlogItems from "../Data/BlogItems";
 import Error from "../UI/Error";
@@ -8,18 +8,44 @@ import { useBlogListMutation
  } from "../../redux/services/blogSlice";
 
 const Blog = () => {
-  const { data, isFetching, error } = useBlogListMutation
-();
-  const resData = data?.articles.slice(0, 4);
 
+  const [isLoading, setIsLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState(null);
+  const [resData, setResData] = useState(null);
+
+
+  const [blogList] = useBlogListMutation();
+  
+  useEffect(()=>{
+    const handleSubmit = async (event) => {
+      setIsLoading(true);
+  
+      try {
+        const res = await blogList().unwrap();
+        console.log(res);
+        if (!res) {
+          throw new Error("Data Fetch Failed!");
+        }
+        
+        setResData(res.data)
+      } catch (error) {
+        console.log('error',error);
+      }
+      setIsLoading(false);
+    };
+    
+    handleSubmit()
+    
+  },[])
+  
   const mappedList = resData?.map((blog) => {
     return (
       <BlogItems
         key={blog._id}
         id={blog._id}
         title={blog.title}
-        date={blog.published_date}
-        url={blog.link}
+        date={blog.blogyr}
+        // url={blog.link}
       />
     );
   });
@@ -47,9 +73,9 @@ const Blog = () => {
           </div>
         </div>
         <ul className="flex justify-center flex-col lg:flex-row my-6">
-          {isFetching && <Loader />}
-          {!isFetching && !error && mappedList}
-          {!isFetching && mappedList.length === 0 && <Error />}
+          {isLoading && <Loader />}
+          {!isLoading && mappedList}
+          {/* {!isFetching && mappedList.length === 0 && <Error />} */}
         </ul>
       </section>
     </Fragment>
