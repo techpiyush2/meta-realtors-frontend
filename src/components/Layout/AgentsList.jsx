@@ -25,7 +25,6 @@ const AgentsList = () => {
         if (!data) {
           throw new Error("Authentication Failed!");
         }
-      
       } catch (error) {
         console.log('error something', error);
       }

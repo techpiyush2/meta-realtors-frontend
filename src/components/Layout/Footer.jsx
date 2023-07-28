@@ -43,7 +43,7 @@ const Footer = () => {
 
   return (
     <Fragment>
-      <section className="mx-auto bg-blue px-10 md:px-16 lg:px-20 py-20 pt-20 md:py-16">
+      <section className="mx-auto bg-blue px-10 md:px-16 lg:px-20 py-8 pt-20 md:py-8">
         <div className="flex flex-col lg:flex-row justify-between lg:mx-10 xl:mx-28 mx-0">
           <div className="flex flex-col items-center lg:items-start">
             <div className="w-28 ">

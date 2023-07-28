@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import InvestPage from "../components/Layout/Invest"
+import FAQs from "../components/Layout/FAQs";
 import Footer from "../components/Layout/Footer";
 
 const Invest = () => {
@@ -10,12 +11,11 @@ const Invest = () => {
   });
 
   return (
-    <>
-      <section className="mx-auto bg-silverLite pb-80" ref={divRef}>
-        <InvestPage />
-      </section>
-      <Footer />
-    </>
+    <div className="bg-silver pt-20" ref={divRef}>
+    <InvestPage />
+    <FAQs />  
+    <Footer />
+  </div>
   );
 };
 

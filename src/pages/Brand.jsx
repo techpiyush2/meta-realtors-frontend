@@ -11,7 +11,7 @@ const Brand = () => {
   });
 
   return (
-    <div className=" bg-silver pt-20" ref={divRef}>
+    <div className="bg-silver pt-20" ref={divRef}>
       <BrandList />
       <FAQs />
       <Footer />

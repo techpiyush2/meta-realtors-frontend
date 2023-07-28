@@ -11,7 +11,7 @@ import { useGetPropertyDetailsMutation} from "../redux/services/propertySlice";
 
 const ListingDetail = () => {
   
-   const {propertyId} = useParams()
+  const {propertyId} = useParams()
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState(null);
   const [resData, setResData] = useState(null);

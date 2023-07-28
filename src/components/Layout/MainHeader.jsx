@@ -155,7 +155,7 @@ const MainHeader = () => {
             </NavLink>
           </li>
           <li className=" hover:text-blue">
-            <NavLink to="/agentsList" activeclassname="text-blue" className="px-4 ">
+            <NavLink to="/invest" activeclassname="text-blue" className="px-4 ">
               Invest
             </NavLink>
           </li>
