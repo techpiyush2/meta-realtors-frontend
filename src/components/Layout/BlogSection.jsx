@@ -4,8 +4,7 @@ import BlogItems from "../Data/BlogItems";
 import Error from "../UI/Error";
 import Loader from "../UI/Loader";
 
-import { useBlogListMutation
- } from "../../redux/services/blogSlice";
+import { useBlogListMutation } from "../../redux/services/blogSlice";
 
 const Blog = () => {
 

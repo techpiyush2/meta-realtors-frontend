@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useRef } from "react";
+import React, { Fragment, useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 import Footer from "../components/Layout/Footer";
 import FAQs from "../components/Layout/FAQs";
@@ -7,18 +7,41 @@ import PropertyDetailItems from "../components/Data/PropertyDetailItems";
 import Loader from "../components/UI/Loader";
 import Error from "../components/UI/Error";
 
-import { useGetProperyDetailsQuery } from "../redux/services/bayut";
+import { usePropertyListMutation} from "../redux/services/propertySlice";
 
 const ListingDetail = () => {
-  const params = useParams();
-  const { listingId } = params;
-  const divRef = useRef();
+  
 
-  const { data, isFetching, error } = useGetProperyDetailsQuery(listingId);
+  const [isLoading, setIsLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState(null);
+  const [resData, setResData] = useState(null);
 
-  useEffect(() => {
+  const [propertyList] = usePropertyListMutation();
+  
+  useEffect(()=>{
+    const handleSubmit = async (event) => {
+      setIsLoading(true);
+  
+      try {
+        const res = await propertyList().unwrap();
+        console.log(res);
+        if (!res) {
+          throw new Error("Data Fetch Failed!");
+        }
+        
+        setResData(res.data)
+      } catch (error) {
+        console.log('error',error);
+      }
+      setIsLoading(false);
+    };
+    
     divRef.current.scrollIntoView({ behavior: "smooth" });
-  });
+    
+    handleSubmit()
+    
+  },[])
+  
 
   return (
     <Fragment>
@@ -27,29 +50,29 @@ const ListingDetail = () => {
         className="mx-auto bg-silver px-2 md:px-16 lg:px-20 py-20 pt-20 md:py-16"
       >
         <div className="my-20">
-          {!isFetching && !error && (
+          {!isLoading && (
             <PropertyDetailItems
-              key={data?.externalID}
-              id={data?.externalID}
-              numOfBed={data?.rooms}
-              numOfBath={data?.baths}
-              size={data?.area}
-              price={data?.price}
-              address={data?.title}
-              image={data?.coverPhoto?.url}
-              state={data?.state}
-              rentType={data?.rentFrequency}
-              description={data?.description}
-              amenities={data?.amenities}
-              photos={data?.photos}
-              phoneNumber={data?.phoneNumber}
-              agencyName={data?.agency?.name}
-              contactName={data?.contactName}
-              logo={data?.agency?.logo?.url}
+              key={resData?._id}
+              id={resData?._id}
+              numOfBed={resData?.rooms}
+              numOfBath={resData?.baths}
+              size={resData?.area}
+              price={resData?.price}
+              address={resData?.title}
+              image={resData?.coverPhoto?.url}
+              state={resData?.state}
+              rentType={resData?.rentFrequency}
+              description={resData?.description}
+              amenities={resData?.amenities}
+              photos={resData?.photos}
+              phoneNumber={resData?.phoneNumber}
+              agencyName={resData?.agency?.name}
+              contactName={resData?.contactName}
+              logo={resData?.agency?.logo?.url}
             />
           )}
-          {isFetching && <Loader />}
-          {!isFetching && data.length === 0 && <Error />}
+          {isLoading && <Loader />}
+          {!isLoading && data.length === 0 && <Error />}
         </div>
       </section>
       <FAQs />

@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const bayutApi = createApi({
   reducerPath: "bayutApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://bayut.p.rapidapi.com",
+    baseUrl: "http://localhost:5000/api/v1/property/list",
     prepareHeaders: (headers) => {
       headers.set(
         "X-RapidAPI-Key",
@@ -16,10 +16,10 @@ export const bayutApi = createApi({
 
   endpoints: (builder) => ({
     getProperyList: builder.query({
-      query: () => `/properties/list/?locationExternalIDs=${(5002, 6020)}`,
+      query: () => ``,
     }),
     getProperyDetails: builder.query({
-      query: (id) => `/properties/detail?externalID=${id}`,
+      query: (id) => `/properties/${id}`,
     }),
     getAgencyList: builder.query({
       query: (phrase) => `/agencies/list?query=${phrase}`,

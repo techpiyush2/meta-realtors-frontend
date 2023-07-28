@@ -12,7 +12,6 @@ const BlogPosts = () => {
   const [errorMessage, setErrorMessage] = useState(null);
   const [resData, setResData] = useState(null);
 
-
   const [blogList] = useBlogListMutation();
   
   useEffect(()=>{

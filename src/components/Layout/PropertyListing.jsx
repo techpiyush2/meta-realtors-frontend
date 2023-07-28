@@ -1,28 +1,55 @@
-import React, { Fragment } from "react";
+import React, { Fragment ,useState,useEffect} from "react";
 import PropertiesItem from "../Data/PropertiesItem";
 
 import { useGetProperyListQuery } from "../../redux/services/bayut";
 import Loader from "../UI/Loader";
 import Error from "../UI/Error";
 
+import { usePropertyListMutation} from "../../redux/services/propertySlice";
+
+
 const Properties = () => {
-  const { data, isFetching, error } = useGetProperyListQuery();
+  const [isFetching, setIsFetching] = useState(false);
+  const [errorMessage, setErrorMessage] = useState(null);
+  const [resData, setResData] = useState(null);
 
-  const propertiesData = data?.hits;
+  const [propertyList] = usePropertyListMutation();
+  
+  useEffect(()=>{
+    const handleSubmit = async (event) => {
+      setIsFetching(true);
+  
+      try {
+        const res = await propertyList().unwrap();
+        console.log(res);
+        if (!res) {
+          throw new Error("Data Fetch Failed!");
+        }
+        setResData(res.data)
+      } catch (error) {
+        console.log('error',error);
+      }
+      setIsFetching(false);
+    };
+    
+    handleSubmit()
+    
+  },[])
+  
 
-  const mappedList = propertiesData?.map((property) => {
+  const mappedList = resData?.map((property) => {
     return (
       <PropertiesItem
-        key={property?.externalID}
-        id={property?.externalID}
-        numOfBed={property?.rooms}
-        numOfBath={property?.baths}
+        key={property?._id}
+        id={property?._id}
+        // numOfBed={property?.rooms}
+        // numOfBath={property?.baths}
         size={property?.area}
         price={property?.price}
         address={property?.title}
-        image={property?.coverPhoto?.url}
-        state={property?.state}
-        rentType={property?.rentFrequency}
+        // image={property?.coverPhoto?.url}
+        // state={property?.state}
+        // rentType={property?.rentFrequency}
       />
     );
   });
@@ -38,8 +65,8 @@ const Properties = () => {
         <div>
           <ul className="flex justify-center flex-col lg:flex-row lg:flex-wrap ">
             {isFetching && <Loader />}
-            {!isFetching && !error && mappedList}
-            {!isFetching && mappedList?.length === 0 && <Error />}
+            {!isFetching && mappedList}
+            {/* {!isFetching && mappedList?.length === 0 && <Error />} */}
           </ul>
         </div>
       </section>

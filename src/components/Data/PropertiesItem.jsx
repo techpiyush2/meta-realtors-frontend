@@ -10,14 +10,14 @@ const PropertiesItem = ({
   id,
   price,
   address,
-  numOfBed,
-  numOfBath,
-  image,
-  size,
-  state,
-  rentType,
+  // numOfBed,
+  // numOfBath,
+  // image,
+  // size,
+  // state,
+  // rentType,
 }) => {
-  const shortSize = size.toFixed(2);
+  // const shortSize = size.toFixed(2);
 
   return (
     <Fragment>
@@ -26,11 +26,11 @@ const PropertiesItem = ({
           <div className="py-2 px-2">
             <div className="w-auto p-1 ">
               <p className="font-Poppins text-xs rounded-full text-blue  absolute bg-white p-2 py-1 mt-2 ml-2">
-                {state}
+                {"s"}
               </p>
               <img
                 className="h-60 lg:h-40 xl:h-52 w-full object-cover rounded-2xl"
-                src={image}
+                src={"ws"}
                 alt="real estate"
               />
             </div>
@@ -48,15 +48,15 @@ const PropertiesItem = ({
           <div className="flex justify-between px-4 mb-3">
             <div className="flex items-center ">
               <RiHotelBedFill className="text-medium text-blue mr-1" />{" "}
-              <p className="text-xs text-ash">{numOfBed} Bed</p>
+              <p className="text-xs text-ash">{"s"} Bed</p>
             </div>
             <div className="flex items-center ">
               <FaBath className="text-medium text-blue mr-1" />{" "}
-              <p className="text-xs text-ash">{numOfBath} Bath</p>
+              <p className="text-xs text-ash">{""} Bath</p>
             </div>
             <div className="flex items-center ">
               <MdSpaceDashboard className="text-medium text-blue mr-1" />{" "}
-              <p className="text-xs text-ash">{shortSize} sqft</p>
+              <p className="text-xs text-ash">{""} sqft</p>
             </div>
           </div>
           <div className="flex flex-wrap justify-between  px-4 pb-3 mb-4">
@@ -68,7 +68,7 @@ const PropertiesItem = ({
             <h1 className="font-Poppins text-md text-blue font-semibold pl-1 py-1">
               {`AED ${price}`}
               <span className="font-Poppins text-liteBlue text-xs">
-                /{rentType}
+                /{"j"}
               </span>
             </h1>
           </div>

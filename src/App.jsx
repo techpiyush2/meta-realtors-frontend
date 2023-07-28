@@ -8,7 +8,6 @@ import Blog from "./pages/Blog";
 import NotFound from "./pages/NotFound";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
-import Agent from "./pages/Agent";
 import Brand from "./pages/Brand"
 import Layout from "./components/Layout/Layout";
 import Plot from "./pages/Plot"

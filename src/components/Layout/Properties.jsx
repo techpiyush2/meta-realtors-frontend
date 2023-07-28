@@ -6,17 +6,43 @@ import { useGetProperyListQuery } from "../../redux/services/bayut";
 import Loader from "../UI/Loader";
 import Error from "../UI/Error";
 
+import { usePropertyListMutation} from "../../redux/services/propertySlice";
+
+
 const Properties = () => {
-  const { data, isFetching, error } = useGetProperyListQuery();
+  const [isFetching, setIsFetching] = useState(false);
+  const [errorMessage, setErrorMessage] = useState(null);
+  const [resData, setResData] = useState(null);
 
-  console.log(data?.hits);
-  const propertiesData = data?.hits.slice(0, 4);
+  const [propertyList] = usePropertyListMutation();
+  
+  useEffect(()=>{
+    const handleSubmit = async (event) => {
+      setIsFetching(true);
+  
+      try {
+        const res = await propertyList({type : "FLAT"}).unwrap();
+        console.log(res);
+        if (!res) {
+          throw new Error("Data Fetch Failed!");
+        }
+        setResData(res.data)
+      } catch (error) {
+        console.log('error',error);
+      }
+      setIsFetching(false);
+    };
+    
+    handleSubmit()
+    
+  },[])
+  
 
-  const mappedList = propertiesData?.map((property) => {
+  const mappedList = resData?.map((property) => {
     return (
       <PropertiesItem
-        key={property?.externalID}
-        id={property?.externalID}
+        key={property?._id}
+        id={property?._id}
         numOfBed={property?.rooms}
         numOfBath={property?.baths}
         size={property?.area}
