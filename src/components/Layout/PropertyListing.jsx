@@ -1,7 +1,7 @@
 import React, { Fragment ,useState,useEffect} from "react";
 import PropertiesItem from "../Data/PropertiesItem";
 
-import { useGetProperyListQuery } from "../../redux/services/bayut";
+import { useGetPropertyListMutation } from "../../redux/services/bayut";
 import Loader from "../UI/Loader";
 import Error from "../UI/Error";
 

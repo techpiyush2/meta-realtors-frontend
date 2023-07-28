@@ -1,4 +1,4 @@
-import loader from "../../assets/spinner.gif";
+import loader from "../../assets/loader.gif";
 
 const Loader = ({ title }) => (
   <div className="w-full flex justify-center items-center flex-col">

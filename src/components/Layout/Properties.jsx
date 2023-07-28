@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
 import PropertiesItem from "../Data/PropertiesItem";
 
-import { useGetProperyListQuery } from "../../redux/services/bayut";
+import { useGetPropertyListMutation } from "../../redux/services/bayut";
 import Loader from "../UI/Loader";
 import Error from "../UI/Error";
 
@@ -69,8 +69,8 @@ const Properties = () => {
         </div>
         <ul className="flex justify-center flex-col lg:flex-row">
           {isFetching && <Loader />}
-          {!isFetching && !error && mappedList}
-          {!isFetching && mappedList?.length === 0 && <Error />}
+          {!isFetching && mappedList}
+          {/* {!isFetching && mappedList?.length === 0 && <Error />} */}
         </ul>
         <div className="flex items-center  justify-center px-4 pb-3 pt-5">
           <Link to="/listings">

@@ -12,6 +12,7 @@ import Brand from "./pages/Brand"
 import Layout from "./components/Layout/Layout";
 import Plot from "./pages/Plot"
 import Invest from './pages/Invest';
+import AgentsList from './components/Layout/AgentsList';
 import Flat from "./pages/Flat"
 import AboutUs from "./pages/AboutUs"
 import ContactUs from "./pages/ContactUs"
@@ -40,6 +41,7 @@ function App() {
         <Route path="/contact-us" element={<ContactUs />}/>
         
         <Route path="/invest" element={<Invest />}/>
+        <Route path="/agentsList" element={<AgentsList />}/>
         
         <Route path="/blog" exact element={ <Blog />}/>
         <Route path="/blog/:blogId" element={ <Blog />}/>
