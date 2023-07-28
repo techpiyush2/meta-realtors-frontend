@@ -1,18 +1,34 @@
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-import { apiSlice } from '../features/apiSlice';
-const USERS_URL = '/api/v1/property';
+export const propertySlice = createApi({
+  reducerPath: "propertySlice",
+  baseQuery: fetchBaseQuery({
+    baseUrl: "http://localhost:5000/api/v1",
+  }),
 
-export const propertySlice
- = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
-    propertyList: builder.mutation({
+    getPropertyList: builder.mutation({
       query: (data) => ({
-        url: `${USERS_URL}/list`,
+        url: `property/list`,
         method: 'POST',
         body: data,
       }),
     }),
+    getPropertyDetails: builder.mutation({
+      query: (data) => ({
+        url: `property/details`,
+        method: 'POST',
+        body: data,
+      }),
+    }),
+    getAgencyList: builder.query({
+      query: (phrase) => `/agencies/list?query=${phrase}`,
+    }),
   }),
 });
 
-export const { usePropertyListMutation } = propertySlice;
+export const {
+  useGetPropertyListMutation,
+  useGetPropertyDetailsMutation,
+  useGetAgencyListQuery,
+} = propertySlice;

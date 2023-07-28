@@ -7,23 +7,24 @@ import PropertyDetailItems from "../components/Data/PropertyDetailItems";
 import Loader from "../components/UI/Loader";
 import Error from "../components/UI/Error";
 
-import { usePropertyListMutation} from "../redux/services/propertySlice";
+import { useGetPropertyDetailsMutation} from "../redux/services/propertySlice";
 
 const ListingDetail = () => {
   
-
+   const {propertyId} = useParams()
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState(null);
   const [resData, setResData] = useState(null);
 
-  const [propertyList] = usePropertyListMutation();
+  const [getPropertyDetails] = useGetPropertyDetailsMutation();
   
   useEffect(()=>{
-    const handleSubmit = async (event) => {
+    const handleSubmit = async () => {
       setIsLoading(true);
   
       try {
-        const res = await propertyList().unwrap();
+        let dataToBeSend = {propertyId }
+        const res = await getPropertyDetails(dataToBeSend).unwrap();
         console.log(res);
         if (!res) {
           throw new Error("Data Fetch Failed!");
@@ -35,9 +36,7 @@ const ListingDetail = () => {
       }
       setIsLoading(false);
     };
-    
-    divRef.current.scrollIntoView({ behavior: "smooth" });
-    
+  
     handleSubmit()
     
   },[])
@@ -45,8 +44,8 @@ const ListingDetail = () => {
 
   return (
     <Fragment>
-      <section
-        ref={divRef}
+      
+      {/* <section
         className="mx-auto bg-silver px-2 md:px-16 lg:px-20 py-20 pt-20 md:py-16"
       >
         <div className="my-20">
@@ -74,7 +73,7 @@ const ListingDetail = () => {
           {isLoading && <Loader />}
           {!isLoading && data.length === 0 && <Error />}
         </div>
-      </section>
+      </section> */}
       <FAQs />
       <Footer />
     </Fragment>

@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useRef, useState } from "react";
-import { BiSearchAlt } from "react-icons/bi";
-
-import { useGetPropertyListMutation } from "../../redux/services/bayut";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useGetPropertyListMutation } from "../../redux/services/propertySlice";
 import Loader from "../UI/Loader";
 import Error from "../UI/Error";
 
@@ -21,6 +21,7 @@ const AgentsList = () => {
       try {
         const data = await getPropertyList().unwrap();
         console.log(data);
+        toast.success(data.message)
         if (!data) {
           throw new Error("Authentication Failed!");
         }
@@ -28,6 +29,7 @@ const AgentsList = () => {
       } catch (error) {
         console.log('error something', error);
       }
+      
       setIsLoading(false);
     };
     
@@ -44,6 +46,7 @@ const AgentsList = () => {
          </div> <div>
           Agent
           {isLoading && <Loader />}
+          <ToastContainer />
           Agent
          </div> <div>
           Agent

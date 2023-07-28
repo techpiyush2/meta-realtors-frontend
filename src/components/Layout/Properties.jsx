@@ -2,11 +2,10 @@ import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
 import PropertiesItem from "../Data/PropertiesItem";
 
-import { useGetPropertyListMutation } from "../../redux/services/bayut";
+import { useGetPropertyListMutation } from "../../redux/services/propertySlice";
 import Loader from "../UI/Loader";
 import Error from "../UI/Error";
 
-import { usePropertyListMutation} from "../../redux/services/propertySlice";
 
 
 const Properties = () => {
@@ -14,7 +13,7 @@ const Properties = () => {
   const [errorMessage, setErrorMessage] = useState(null);
   const [resData, setResData] = useState(null);
 
-  const [propertyList] = usePropertyListMutation();
+  const [propertyList] = useGetPropertyListMutation();
   
   useEffect(()=>{
     const handleSubmit = async (event) => {
