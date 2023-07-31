@@ -5,7 +5,6 @@ import Loader from "../UI/Loader";
 
 import { useBlogListMutation} from "../../redux/services/blogSlice";
 
-
 const BlogPosts = () => {
 
   const [isLoading, setIsLoading] = useState(false);
@@ -43,7 +42,7 @@ const BlogPosts = () => {
         id={blog._id}
         title={blog.title}
         date={blog.blogyr}
-        // url={blog.link}
+        image={blog.image}
       />
     );
   });

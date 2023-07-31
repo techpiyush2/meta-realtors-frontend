@@ -1,51 +1,65 @@
-import React, { Fragment,useState, useEffect } from "react";
+import React, { Fragment ,useState,useEffect} from "react";
+import PropertiesItem from "../Data/PropertiesItem";
 import { Link } from "react-router-dom";
-import BlogItems from "../Data/BlogItems";
-import Error from "../UI/Error";
+import { useGetPropertyListMutation } from "../../redux/services/propertySlice";
 import Loader from "../UI/Loader";
+import Error from "../UI/Error";
 
-import { useBlogListMutation } from "../../redux/services/blogSlice";
 
-const Blog = () => {
-
-  const [isLoading, setIsLoading] = useState(false);
+const FlatSection = () => {
+  const [isFetching, setIsFetching] = useState(false);
   const [errorMessage, setErrorMessage] = useState(null);
   const [resData, setResData] = useState(null);
 
-
-  const [blogList] = useBlogListMutation();
+  const [propertyList] = useGetPropertyListMutation();
   
   useEffect(()=>{
     const handleSubmit = async (event) => {
-      setIsLoading(true);
+      setIsFetching(true);
   
       try {
-        const res = await blogList().unwrap();
+        let dataToBeSend = {type : ["FLAT"]}
+        
+        const res = await propertyList(dataToBeSend).unwrap();
         console.log(res);
         if (!res) {
           throw new Error("Data Fetch Failed!");
         }
-        
         setResData(res.data)
       } catch (error) {
         console.log('error',error);
       }
-      setIsLoading(false);
+      setIsFetching(false);
     };
     
     handleSubmit()
     
   },[])
   
-  const mappedList = resData?.map((blog) => {
+
+  const mappedList = resData?.map((property) => {
     return (
-      <BlogItems
-        key={blog._id}
-        id={blog._id}
-        title={blog.title}
-        date={blog.blogyr}
-        image={blog.image}
-      />
+      <PropertiesItem
+      key={property?._id}
+      id={property?._id}
+      size={property?.size}
+      price={property?.price}
+      address={property?.address}
+      title= {property?.title}
+      isActive = {property?.isActive}
+      isDeleted = {property?.isDeleted}
+      description ={property?.description}
+      image = {property?.images[0]} 
+      type = {property?.type} 
+      bedrooms = {property?.bedrooms} 
+      bathrooms = {property?.bathrooms}
+      parking = {property?.parking}
+      parkOrGarden ={property?.parkOrGarden}
+      Features ={property?.Features} 
+      contactNo = {property?.contactNo} 
+      ownerName = {property?.ownerName}
+    />
+ 
     );
   });
 
@@ -55,8 +69,7 @@ const Blog = () => {
         <div className="flex flex-col md:flex-row justify-between px-auto">
           <div>
             <h1 className="font-Poppins font-bold text-2xl text-left mb-3">
-              Latest Information From Our{" "}
-              <span className="text-blue">Blog</span>
+            Explore Our Listed  <span className="text-blue">Flat</span>
             </h1>
             <p className="text-left text-ash">
               Stay up to date with all the information about our listed
@@ -64,7 +77,7 @@ const Blog = () => {
             </p>
           </div>
           <div className="lg:pr-4 pb-3 pt-5">
-            <Link to="/blog">
+            <Link to="/plots">
               <button className="font-Poppins bg-silverLite border-2 border-blue text-blue font-medium text-base px-8 py-2 rounded-md shadow-lg hover:bg-blue hover:text-white">
                 See More
               </button>
@@ -72,8 +85,8 @@ const Blog = () => {
           </div>
         </div>
         <ul className="flex justify-center flex-col lg:flex-row my-6">
-          {isLoading && <Loader />}
-          {!isLoading && mappedList}
+          {isFetching && <Loader />}
+          {!isFetching && mappedList}
           {/* {!isFetching && mappedList.length === 0 && <Error />} */}
         </ul>
       </section>
@@ -81,4 +94,4 @@ const Blog = () => {
   );
 };
 
-export default Blog;
+export default FlatSection;

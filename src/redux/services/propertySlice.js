@@ -1,9 +1,10 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import environment from "../environment";
 
 export const propertySlice = createApi({
   reducerPath: "propertySlice",
   baseQuery: fetchBaseQuery({
-    baseUrl: "http://localhost:5000/api/v1",
+    baseUrl: environment.baseUrl+ 'api/v1',
   }),
 
   endpoints: (builder) => ({

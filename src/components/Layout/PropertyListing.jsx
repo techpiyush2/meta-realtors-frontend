@@ -41,14 +41,22 @@ const Properties = () => {
       <PropertiesItem
         key={property?._id}
         id={property?._id}
-        // numOfBed={property?.rooms}
-        // numOfBath={property?.baths}
         size={property?.size}
         price={property?.price}
-        address={property?.title}
-        // image={property?.coverPhoto?.url}
-        // state={property?.state}
-        // rentType={property?.rentFrequency}
+        address={property?.address}
+        title= {property?.title}
+        isActive = {property?.isActive}
+        isDeleted = {property?.isDeleted}
+        description ={property?.description}
+        image = {property?.images[0]} 
+        type = {property?.type} 
+        bedrooms = {property?.bedrooms} 
+        bathrooms = {property?.bathrooms}
+        parking = {property?.parking}
+        parkOrGarden ={property?.parkOrGarden}
+        Features ={property?.Features} 
+        contactNo = {property?.contactNo} 
+        ownerName = {property?.ownerName}
       />
     );
   });

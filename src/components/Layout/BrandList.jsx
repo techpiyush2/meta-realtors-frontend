@@ -132,7 +132,7 @@ const BrandList = () => {
       <h2 className="font-Poppins font-bold text-4xl text-center tracking-wider mb-4">
             Our Associated  <span className="text-blue">Brands</span>
           </h2>
-        <ul className="w-[80vw] h-auto flex items-center font-Poppins justify-around flex-wrap m-auto lg:flex-row my-6">{mappedList}</ul>
+        <ul className="w-[80vw] h-auto flex items-center font-Poppins justify-center flex-wrap  lg:flex-row my-6">{mappedList}</ul>
       </div>
     </Fragment>
   ); 

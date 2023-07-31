@@ -11,7 +11,7 @@ const Login = () => {
 
   return (
     <>
-      <section className="mx-auto bg-silverLite pb-80" ref={divRef}>
+      <section  className="bg-silver pt-20" ref={divRef}>
         <AboutPage />
       </section>
       <Footer />

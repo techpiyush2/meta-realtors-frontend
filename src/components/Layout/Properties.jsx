@@ -20,7 +20,7 @@ const Properties = () => {
       setIsFetching(true);
   
       try {
-        const res = await propertyList({type : "FLAT"}).unwrap();
+        const res = await propertyList().unwrap();
         console.log(res);
         if (!res) {
           throw new Error("Data Fetch Failed!");

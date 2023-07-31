@@ -23,6 +23,7 @@ module.exports = {
       silver: "#f0f3f7",
       silverLite: "#fafbfc",
       ash: "#666565",
+      orange : '#FFA500'
     },
     extend: {
       fontFamily: {

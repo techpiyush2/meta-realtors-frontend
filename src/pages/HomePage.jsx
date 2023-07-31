@@ -10,14 +10,19 @@ import Footer from "../components/Layout/Footer";
 import Consult from "../components/Layout/Consult";
 import BrandList from "../components/Layout/BrandList";
 import AssociatedProjects from "../components/Layout/AssociatedProjects";
-
-
+import PlotSection from "../components/Layout/PlotSection";
+import FlatSection from "../components/Layout/FlatSection";
+import KothiSection from "../components/Layout/KothiSection";
 
 const HomePage = () => {
   return (
     <Fragment>
       <Hero />
       <Purpose />
+      
+      <FlatSection/>
+      <PlotSection/>
+      <KothiSection/>
       <Consult/>
       {/* <Properties /> */}
       <BrandList/>

@@ -33,12 +33,12 @@ const MainHeader = () => {
     }
   }
   const truncatedString = newStr.replace("@", "");
-  // console.log(truncatedString);
+  
 
   const btnContent = isAuthenticated ? "Logout" : "Login";
   const getStartedContent = isAuthenticated
     ? ` ${truncatedString}`
-    : "Get Started";
+    : "Sign Up";
 
   const mobileMenu = (
     <div className="w-11/12 max-w-2xl mt-4 lg:hidden">
@@ -143,7 +143,7 @@ const MainHeader = () => {
             <img src={Logo} alt="macho-logo" className="w-full" />
           </div>
         </div>
-        <ul className=" hidden lg:flex px-6 text-ash ">
+        <ul className=" hidden lg:flex px-2 text-ash ">
           <li className=" hover:text-blue">
             <NavLink to="/home" activeclassname="text-blue" className="px-4">
               Home
@@ -184,7 +184,11 @@ const MainHeader = () => {
               Blogs
             </NavLink>
           </li>
- 
+          <li className=" hover:text-blue">
+            <NavLink to="/about-us" activeclassname="text-blue" className="px-4 ">
+              About Us
+            </NavLink>
+          </li>
 
         </ul>
         <div className="pl-18 hidden lg:flex ">

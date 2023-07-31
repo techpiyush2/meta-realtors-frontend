@@ -2,8 +2,11 @@ import React, { Fragment } from "react";
 import { FiClock } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import BlogImage from "../../assets/Blog3.jpg";
+import environment from "../../redux/environment";
+const imgPath = environment.baseUrl + 'upload/blogs/'
 
-const BlogItem = ({ id, title, date, link }) => {
+
+const BlogItem = ({ id, title, date, image }) => {
   return (
     <Fragment>
       <li
@@ -14,7 +17,7 @@ const BlogItem = ({ id, title, date, link }) => {
           <div className="w-full p-1 ">
             <img
               className="h-60 lg:h-40 xl:h-52 w-full object-cover rounded-2xl"
-              src={BlogImage}
+              src={imgPath+ image}
               alt="real estate"
             />
           </div>

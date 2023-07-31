@@ -45,7 +45,7 @@ const ListingDetail = () => {
   return (
     <Fragment>
       
-      {/* <section
+      <section
         className="mx-auto bg-silver px-2 md:px-16 lg:px-20 py-20 pt-20 md:py-16"
       >
         <div className="my-20">
@@ -53,27 +53,30 @@ const ListingDetail = () => {
             <PropertyDetailItems
               key={resData?._id}
               id={resData?._id}
-              numOfBed={resData?.rooms}
-              numOfBath={resData?.baths}
-              size={resData?.area}
+              numOfBed={resData?.bedrooms}
+              numOfBath={resData?.bathrooms}
+              size={resData?.size}
               price={resData?.price}
               address={resData?.title}
-              image={resData?.coverPhoto?.url}
-              state={resData?.state}
-              rentType={resData?.rentFrequency}
+              image={resData?.images[0]}
+              state={resData?.address}
+              rentType={resData?.type}
               description={resData?.description}
-              amenities={resData?.amenities}
-              photos={resData?.photos}
-              phoneNumber={resData?.phoneNumber}
+              amenities={resData?.Features}
+              photos={resData?.images}
+              phoneNumber={resData?.contactNo}
+              parking={resData?.parking}
+              parkOrGarden={resData?.parkOrGarden}
               agencyName={resData?.agency?.name}
-              contactName={resData?.contactName}
+              contactName={resData?.ownerName}
+              Features={resData?.Features}
               logo={resData?.agency?.logo?.url}
             />
           )}
           {isLoading && <Loader />}
-          {!isLoading && data.length === 0 && <Error />}
+          {/* {!isLoading && data.length === 0 && <Error />} */}
         </div>
-      </section> */}
+      </section>
       <FAQs />
       <Footer />
     </Fragment>

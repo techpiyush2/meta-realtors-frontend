@@ -8,6 +8,9 @@ import { MdSpaceDashboard } from "react-icons/md";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import defaultLogo from "../../assets/Blog1.jpg";
 import { Link } from "react-router-dom";
+import environment from "../../redux/environment";
+
+const imgPath = environment.baseUrl + 'upload/properties/'
 
 const PropertyDetailItems = ({
   id,
@@ -27,9 +30,9 @@ const PropertyDetailItems = ({
   contactName,
   logo,
 }) => {
-  const shortSize = size.toFixed(3);
+  const shortSize = size;
   const photo = photos?.map((image) => image);
-  const [chosenPhoto, setChosenPhoto] = useState(photo[0].url);
+  const [chosenPhoto, setChosenPhoto] = useState(photo);
 
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
 
@@ -39,24 +42,20 @@ const PropertyDetailItems = ({
         <div>
           <div className="py-2 px-2">
             <div className="w-auto p-1 ">
-              <p className="font-Poppins text-xs lg:text-lg lg:font-medium rounded-full text-[#22c55e]  absolute bg-white p-2 py-1 lg:px-6 mt-2 ml-2">
+              <p className="font-Poppins text-xs lg:text-lg lg:font-medium rounded-full text-orange  absolute bg-white p-2 py-1 lg:px-6 mt-2 ml-2">
                 {state}
               </p>
-              <img
-                className="h-60 md:h-72 lg:h-[25rem] xl:h-[30rem] w-full object-cover rounded-2xl"
-                src={chosenPhoto || image}
-                alt="real estate"
-              />
+
             </div>
             <div className="my-2 mx-1">
               <div className="flex overflow-scroll">
-                {photo?.map((snap) => (
+                {photo?.map((image,i) => (
                   <img
-                    onClick={() => setChosenPhoto(snap.url)}
+                    onClick={() => setChosenPhoto(imgPath + image)}
                     alt="Properties"
-                    key={snap.externalID}
-                    src={snap.url}
-                    className="h-28 w-auto px-1 cursor-pointer"
+                    key={i}
+                    src={imgPath + image}
+                    className="w-auto h-84 px-1 cursor-pointer"
                   />
                 ))}
               </div>
@@ -71,12 +70,12 @@ const PropertyDetailItems = ({
                 </h1>
               </div>
               <div className="flex flex-wrap justify-center my-2">
-                {amenities?.map((feature) => (
+                {amenities?.map((feature,i) => (
                   <span
-                    key={feature.externalGroupID}
-                    className="font-Poppins text-center bg-liteBlue text-[8px] lg:text-[10px] mx-1 p-[2px] my-[2px] lg:my-0 px-2 rounded-full text-white"
+                    key={i}
+                    className="font-Poppins text-center bg-orange text-[10px] lg:text-[15px] mx-1 p-[2px] my-[2px] lg:my-0 px-2 rounded-full text-white"
                   >
-                    {feature.text}
+                    {feature}
                   </span>
                 ))}
               </div>
@@ -103,10 +102,10 @@ const PropertyDetailItems = ({
             </div>
           </div>
           <div className="flex justify-center px-4 md:mx-32 lg:mx-52 xl:mx-60 py-1 my-2 mb-16">
-            <h1 className="font-Poppins text-md md:text-lg lg:text-xl text-white font-semibold py-1 px-5 bg-blue rounded-lg">
-              {`AED ${price}`}
+            <h1 className=" text-md md:text-lg lg:text-xl text-white font-semibold py-1 px-5 bg-blue rounded-lg">
+
               <span className="font-Poppins text-white text-base font-medium">
-                /{rentType}
+                {rentType}      {"in"}          {`₹${price}`}
               </span>
             </h1>
           </div>
@@ -141,8 +140,8 @@ const PropertyDetailItems = ({
                   <div>
                     <h4 className="text-base md:text-xl mb-4">
                       <span className="font-semibold mr-4">Contact:</span>
-                      {phoneNumber?.phone ||
-                        phoneNumber?.mobile ||
+                      {
+                        phoneNumber||
                         "Unavailable"}
                     </h4>
                   </div>

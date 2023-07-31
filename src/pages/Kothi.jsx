@@ -11,7 +11,7 @@ const Kothi = () => {
 
   return (
     <>
-      <section className="mx-auto bg-silverLite pb-80" ref={divRef}>
+      <section className="mx-auto bg-silverLite pt-20" ref={divRef}>
         <KothiList />
       </section>
       <Footer />
