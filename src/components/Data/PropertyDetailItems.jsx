@@ -55,7 +55,7 @@ const PropertyDetailItems = ({
                     alt="Properties"
                     key={i}
                     src={imgPath + image}
-                    className="w-auto h-84 px-1 cursor-pointer"
+                    className="w-auto h-[35vw] px-1 cursor-pointer"
                   />
                 ))}
               </div>

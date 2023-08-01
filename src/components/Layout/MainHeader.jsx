@@ -140,11 +140,11 @@ const MainHeader = () => {
       <nav className="flex lg:flex items-center justify-between px-6  font-Poppins">
         <div className="flex  items-center ">
           <div className="w-28 ">
-            <img src={Logo} alt="macho-logo" className="w-full" />
+            <img src={Logo} alt="meta-realtors" className="w-full" />
           </div>
         </div>
-        <ul className=" hidden lg:flex px-2 text-ash ">
-          <li className=" hover:text-blue">
+        <ul className="hidden lg:flex text-ash ">
+          <li className="hover:text-blue">
             <NavLink to="/home" activeclassname="text-blue" className="px-4">
               Home
             </NavLink>
