@@ -4,14 +4,16 @@ import PropertiesItem from "../Data/PropertiesItem";
 import { useGetPropertyListMutation } from "../../redux/services/propertySlice";
 import Loader from "../UI/Loader";
 import Error from "../UI/Error";
+import Pagination from '../Layout/Pagination'
 
 
 
 const Flat = () => {
   const [isFetching, setIsFetching] = useState(false);
   const [errorMessage, setErrorMessage] = useState(null);
-  const [resData, setResData] = useState(null);
-
+  const [resData, setResData] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage, setPostsPerPage] = useState(6);
   const [propertyList] = useGetPropertyListMutation();
   
   useEffect(()=>{
@@ -34,9 +36,12 @@ const Flat = () => {
     handleSubmit()
     
   },[])
-  
 
-  const mappedList = resData?.map((property) => {
+  const lastPostIndex = currentPage * postsPerPage;
+  const firstPostIndex = lastPostIndex - postsPerPage;
+  const currentData = resData.slice(firstPostIndex, lastPostIndex);
+
+  const mappedList = currentData?.map((property) => {
     return (
       <PropertiesItem
       key={property?._id}
@@ -75,6 +80,12 @@ const Flat = () => {
             {!isFetching && mappedList}
             {/* {!isFetching && mappedList?.length === 0 && <Error />} */}
           </ul>
+          <Pagination
+                totalPosts={resData.length}
+                postsPerPage={postsPerPage}
+                setCurrentPage={setCurrentPage}
+                currentPage={currentPage}
+            />
         </div>
       </section>
     </Fragment>

@@ -7,18 +7,16 @@ import Loader from "../UI/Loader";
 import Error from "../UI/Error";
 
 
-
 const Properties = () => {
   const [isFetching, setIsFetching] = useState(false);
   const [errorMessage, setErrorMessage] = useState(null);
-  const [resData, setResData] = useState(null);
+  const [resData, setResData] = useState([]);
 
   const [propertyList] = useGetPropertyListMutation();
   
   useEffect(()=>{
     const handleSubmit = async (event) => {
       setIsFetching(true);
-  
       try {
         const res = await propertyList().unwrap();
         console.log(res);
@@ -35,6 +33,8 @@ const Properties = () => {
     handleSubmit()
     
   },[])
+  
+  
   
 
   const mappedList = resData?.map((property) => {
@@ -54,6 +54,7 @@ const Properties = () => {
     );
   });
 
+  
   return (
     <Fragment>
       <section className="mx-auto bg-silver px-10 md:px-16 lg:px-20 py-20 pt-20 md:py-16">

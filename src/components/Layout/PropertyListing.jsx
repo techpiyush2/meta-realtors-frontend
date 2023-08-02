@@ -4,27 +4,32 @@ import PropertiesItem from "../Data/PropertiesItem";
 import { useGetPropertyListMutation } from "../../redux/services/propertySlice";
 import Loader from "../UI/Loader";
 import Error from "../UI/Error";
-
+import Pagination from '../Layout/Pagination'
 
 
 const Properties = () => {
   const [isFetching, setIsFetching] = useState(false);
   const [errorMessage, setErrorMessage] = useState(null);
-  const [resData, setResData] = useState(null);
+  const [resData, setResData] = useState([]);
 
-  const [propertyList] = useGetPropertyListMutation();
+  const [getPropertyList] = useGetPropertyListMutation();
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage, setPostsPerPage] = useState(6);
+  
   
   useEffect(()=>{
     const handleSubmit = async (event) => {
       setIsFetching(true);
   
       try {
-        const res = await propertyList().unwrap();
-        console.log(res);
+        const res = await getPropertyList().unwrap();
         if (!res) {
           throw new Error("Data Fetch Failed!");
         }
+        
         setResData(res.data)
+        
       } catch (error) {
         console.log('error',error);
       }
@@ -35,8 +40,13 @@ const Properties = () => {
     
   },[])
   
+  const lastPostIndex = currentPage * postsPerPage;
+  const firstPostIndex = lastPostIndex - postsPerPage;
+  const currentData = resData.slice(firstPostIndex, lastPostIndex);
 
-  const mappedList = resData?.map((property) => {
+  
+
+  const mappedList = currentData?.map((property) => {
     return (
       <PropertiesItem
         key={property?._id}
@@ -75,6 +85,12 @@ const Properties = () => {
             {!isFetching && mappedList}
             {/* {!isFetching && mappedList?.length === 0 && <Error />} */}
           </ul>
+          <Pagination
+                totalPosts={resData.length}
+                postsPerPage={postsPerPage}
+                setCurrentPage={setCurrentPage}
+                currentPage={currentPage}
+            />
         </div>
       </section>
     </Fragment>

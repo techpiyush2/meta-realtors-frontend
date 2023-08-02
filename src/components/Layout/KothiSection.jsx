@@ -9,7 +9,7 @@ import Error from "../UI/Error";
 const KothiSection = () => {
   const [isFetching, setIsFetching] = useState(false);
   const [errorMessage, setErrorMessage] = useState(null);
-  const [resData, setResData] = useState(null);
+  const [resData, setResData] = useState([]);
 
   const [propertyList] = useGetPropertyListMutation();
   
@@ -36,8 +36,11 @@ const KothiSection = () => {
     
   },[])
   
+  
+  let renderData = resData.slice(0,4)
+  
 
-  const mappedList = resData?.map((property) => {
+  const mappedList = renderData?.map((property) => {
     return (
       <PropertiesItem
       key={property?._id}

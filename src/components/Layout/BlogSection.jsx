@@ -10,7 +10,7 @@ const Blog = () => {
 
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState(null);
-  const [resData, setResData] = useState(null);
+  const [resData, setResData] = useState([]);
 
 
   const [blogList] = useBlogListMutation();
@@ -36,8 +36,11 @@ const Blog = () => {
     handleSubmit()
     
   },[])
+
+  let renderData = resData.slice(0,4)
   
-  const mappedList = resData?.map((blog) => {
+  
+  const mappedList = renderData?.map((blog) => {
     return (
       <BlogItems
         key={blog._id}
