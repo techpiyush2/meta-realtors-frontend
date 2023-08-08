@@ -1,5 +1,6 @@
 import React, { Fragment ,useState,useEffect} from "react";
 import PropertiesItem from "../Data/PropertiesItem";
+import { ToastContainer, toast } from 'react-toastify';
 
 import { useGetPropertyListMutation } from "../../redux/services/propertySlice";
 import Loader from "../UI/Loader";
@@ -23,12 +24,20 @@ const Flat = () => {
       try {
         let dataToBeSend = {type : ["FLAT"]}
         const res = await propertyList(dataToBeSend).unwrap();
+        if(res.code===200){
+          toast.success(res.message)
+        }else{
+          toast.error(res.message)
+        }
+          
         if (!res) {
           throw new Error("Data Fetch Failed!");
         }
         setResData(res.data)
       } catch (error) {
         console.log('error',error);
+        toast.error('Network Error')
+        
       }
       setIsFetching(false);
     };
@@ -68,6 +77,8 @@ const Flat = () => {
 
   return (
     <Fragment>
+        <ToastContainer />
+      
       <section className="mx-auto bg-silver px-10 md:px-16 lg:px-20 py-20 pt-20 md:py-16">
         <div className="px-auto lg:px-32">
           <h1 className="font-Poppins font-bold text-4xl text-center tracking-wider mb-4">

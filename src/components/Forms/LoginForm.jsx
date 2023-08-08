@@ -5,9 +5,9 @@ import { useLoginMutation } from "../../redux/services/userSlice";
 import { login, setActiveUser } from "../../redux/features/authSlice";
 import { useDispatch } from "react-redux";
 
+
 const LoginForm = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const [errorMessage, setErrorMessage] = useState(null);
   const emailInputRef = useRef();
   const passwordInputRef = useRef();
   const navigate = useNavigate();
@@ -29,7 +29,7 @@ const LoginForm = () => {
 
     try {
       const user = await logIn(formData).unwrap();
-      console.log(user);
+      
       if (!user) {
         throw new Error("Authentication Failed!");
       }
@@ -58,12 +58,7 @@ const LoginForm = () => {
               </Link>
             </p>
           </div>
-          {errorMessage && (
-            <div className="text-black mb-8 text-sm p-4 bg-[#f7cfcf] border-[#dc2626] border rounded-lg">
-              {" "}
-              <p className="text-center text-sm">{errorMessage}</p>
-            </div>
-          )}
+       
           <form onSubmit={handleSubmit}>
             <div className="flex flex-col mb-5">
               <label className="text-ash pb-2 text-lg" htmlFor="email">

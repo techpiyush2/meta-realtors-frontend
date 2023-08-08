@@ -20,13 +20,19 @@ const AgentsList = () => {
 
       try {
         const data = await getPropertyList().unwrap();
-        console.log(data);
-        toast.success(data.message)
+        
+        if(data.status===200){
+          toast.success(data.message)
+        }
+          toast.error(data.message)
+          
         if (!data) {
           throw new Error("Authentication Failed!");
         }
       } catch (error) {
         console.log('error something', error);
+        toast.error('Network Error')
+        
       }
       
       setIsLoading(false);

@@ -9,7 +9,6 @@ import Error from "../UI/Error";
 
 const Properties = () => {
   const [isFetching, setIsFetching] = useState(false);
-  const [errorMessage, setErrorMessage] = useState(null);
   const [resData, setResData] = useState([]);
 
   const [propertyList] = useGetPropertyListMutation();
@@ -19,7 +18,7 @@ const Properties = () => {
       setIsFetching(true);
       try {
         const res = await propertyList().unwrap();
-        console.log(res);
+        
         if (!res) {
           throw new Error("Data Fetch Failed!");
         }

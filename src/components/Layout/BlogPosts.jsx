@@ -2,6 +2,7 @@ import React, { Fragment, useEffect,useState } from "react";
 import BlogItems from "../Data/BlogItems";
 import Error from "../UI/Error";
 import Loader from "../UI/Loader";
+import { ToastContainer, toast } from 'react-toastify';
 
 import { useBlogListMutation} from "../../redux/services/blogSlice";
 
@@ -19,7 +20,13 @@ const BlogPosts = () => {
   
       try {
         const res = await blogList().unwrap();
-        console.log(res);
+        if(res.code===200){
+          toast.success(res.message)
+        }else{
+          toast.error(res.message)
+        }
+
+          
         if (!res) {
           throw new Error("Data Fetch Failed!");
         }
@@ -27,6 +34,8 @@ const BlogPosts = () => {
         setResData(res.data)
       } catch (error) {
         console.log('error',error);
+        toast.error('Network Error')
+        
       }
       setIsLoading(false);
     };
@@ -49,6 +58,8 @@ const BlogPosts = () => {
 
   return (
     <Fragment>
+        <ToastContainer />
+      
       <section className="mx-auto bg-silver px-10 md:px-16 lg:px-20 py-20 pt-20 md:py-16">
         <div className="flex flex-col md:flex-row justify-center px-auto">
           <div className="mb-8">
