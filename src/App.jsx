@@ -17,6 +17,8 @@ import Flat from "./pages/Flat"
 import AboutUs from "./pages/AboutUs"
 import HomeLoan from "./pages/HomeLoan"
 import Kothi from "./pages/Kothi"
+import BuyPage from './pages/BuyPage';
+import SellPage from './pages/SellPage';
 function App() {
   // const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
 
@@ -34,6 +36,9 @@ function App() {
         <Route path="/flats" element={<Flat />}/>
         <Route path="/plots" element={<Plot />}/>
         <Route path="/kothi-villas" element={<Kothi/>}/>
+        
+        <Route path="/buy" element={<BuyPage/>}/>
+        <Route path="/sell" element={<SellPage/>}/>
         
         <Route path="/home-loan" element={<HomeLoan />}/>
         <Route path="/about-us" element={<AboutUs />}/>

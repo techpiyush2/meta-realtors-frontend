@@ -43,12 +43,12 @@ const MainHeader = () => {
   const mobileMenu = (
     <div className="w-11/12 max-w-2xl mt-4 lg:hidden">
       <ul className=" flex-col px-6 text-ash  ">
-        <li className="py-3  hover:text-blue" >
+        <li className="py-3  hover:text-blue " >
           <NavLink to="/home" activeclassname="text-blue" onClick={menuHandler}>
             Home
           </NavLink>
         </li>
-        <li className="py-3  hover:text-blue">
+        <li className="py-3  hover:text-blue ">
           <NavLink
             to="/listings"
             activeclassname="text-blue"
@@ -57,7 +57,7 @@ const MainHeader = () => {
             Properties
           </NavLink>
         </li>
-        <li className="py-3  hover:text-blue">
+        <li className="py-3  hover:text-blue ">
           <NavLink
             to="/brands"
             activeclassname="text-blue"
@@ -66,7 +66,7 @@ const MainHeader = () => {
            Our Brands
           </NavLink>
         </li>
-        <li className="py-3  hover:text-blue">
+        <li className="py-3  hover:text-blue ">
           <NavLink
             to="/brands"
             activeclassname="text-blue"
@@ -75,7 +75,7 @@ const MainHeader = () => {
             Invest
           </NavLink>
         </li>
-        <li className="py-3  hover:text-blue">
+        <li className="py-3  hover:text-blue ">
           <NavLink
             to="/brands"
             activeclassname="text-blue"
@@ -84,7 +84,7 @@ const MainHeader = () => {
             Plots
           </NavLink>
         </li>
-        <li className="py-3  hover:text-blue">
+        <li className="py-3  hover:text-blue ">
           <NavLink
             to="/brands"
             activeclassname="text-blue"
@@ -93,7 +93,7 @@ const MainHeader = () => {
             Khoties And Villas
           </NavLink>
         </li>
-        <li className="py-3  hover:text-blue">
+        <li className="py-3  hover:text-blue ">
           <NavLink
             to="/brands"
             activeclassname="text-blue"
@@ -102,7 +102,7 @@ const MainHeader = () => {
             Listing
           </NavLink>
         </li>
-        <li className="py-3  hover:text-blue">
+        <li className="py-3  hover:text-blue ">
           <NavLink
             to="/blogs"
             activeclassname="text-blue"
@@ -137,60 +137,84 @@ const MainHeader = () => {
 
   return (
     <header className="z-50 w-full fixed bg-white top-0 p-4 px-6 lg:px-20 ">
-      <nav className="flex lg:flex items-center justify-between px-6  font-Poppins">
-        <div className="flex  items-center ">
-          <div className="w-28 ">
+      <nav className="flex lg:flex items-center justify-between px-6 font-Poppins">
+        <div className="flex items-center ">
+          <div className="w-28">
             <img src={Logo} alt="meta-realtors" className="w-full" />
           </div>
         </div>
-        <ul className="hidden lg:flex text-ash ">
-          <li className="hover:text-blue">
+         <div className="flex flex-col items-center justify-evenly">
+         <ul className="hidden lg:flex text-ash mb-2">
+          <li className="hover:text-blue ">
             <NavLink to="/home" activeclassname="text-blue" className="px-4">
               Home
             </NavLink>
           </li>
-          <li className=" hover:text-blue">
+          <li className=" hover:text-blue ">
             <NavLink to="/brands" activeclassname="text-blue" className="px-4">
               Our brands
             </NavLink>
           </li>
-          <li className=" hover:text-blue">
+          <li className=" hover:text-blue ">
             <NavLink to="/invest" activeclassname="text-blue" className="px-4 ">
               Invest
             </NavLink>
           </li>
-           <li className=" hover:text-blue">
+           <li className=" hover:text-blue ">
             <NavLink to="/plots" activeclassname="text-blue" className="px-4 ">
               Plots
             </NavLink>
           </li>
-          <li className=" hover:text-blue">
+          <li className=" hover:text-blue ">
             <NavLink to="/flats" activeclassname="text-blue" className="px-4 ">
               Flats
             </NavLink>
           </li>
-          <li className=" hover:text-blue">
+          <li className=" hover:text-blue ">
             <NavLink to="/kothi-villas" activeclassname="text-blue" className="px-4 ">
               Khoties & Villas
             </NavLink>
           </li>
-          <li className=" hover:text-blue">
+          <li className=" hover:text-blue ">
             <NavLink to="/listings" activeclassname="text-blue" className="px-4 ">
               Listing
             </NavLink>
           </li>
-          <li className=" hover:text-blue">
+          <li className=" hover:text-blue ">
             <NavLink to="/blog" activeclassname="text-blue" className="px-4 ">
               Blogs
             </NavLink>
           </li>
-          <li className=" hover:text-blue">
+          <li className=" hover:text-blue ">
             <NavLink to="/about-us" activeclassname="text-blue" className="px-4 ">
               About Us
             </NavLink>
           </li>
 
         </ul>
+     <ul className="hidden lg:flex text-ash">
+          <li className=" hover:text-blue ">
+            <NavLink to="/home-loan" activeclassname="text-blue" className="px-4 ">
+              Home Loan
+            </NavLink>
+          </li>
+          <li className=" hover:text-blue ">
+            <NavLink to="/buy" activeclassname="text-blue" className="px-4 ">
+              Buy Property
+            </NavLink>
+          </li>
+          <li className=" hover:text-blue ">
+            <NavLink to="/sell" activeclassname="text-blue" className="px-4 ">
+              Sell Property
+            </NavLink>
+          </li>
+          <li className=" hover:text-blue ">
+            <NavLink to="/contact-us" activeclassname="text-blue" className="px-4 ">
+              Contact Us
+            </NavLink>
+          </li>
+        </ul>
+         </div>
         <div className="pl-18 hidden lg:flex ">
           <button
             className="text-blue font-medium text-base pr-5"
@@ -202,7 +226,7 @@ const MainHeader = () => {
               "Logout"
             )}
           </button>
-          <button className="flex items-center bg-blue text-white border-2 border-blue font-bold text-xs py-2 px-4 hover:text-blue hover:bg-white  hover:outline-blue rounded-lg shadow-md ">
+          <button className="flex items-center bg-blue text-white border-2 border-blue font-bold text-xs py-2 px-4  hove:border-1 hover:outline-blue rounded-lg shadow-md ">
             {isAuthenticated && (
               <div className="mr-3 ">
                 <FaUser />

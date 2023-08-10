@@ -13,7 +13,6 @@ const ListingDetail = () => {
   
   const {propertyId} = useParams()
   const [isLoading, setIsLoading] = useState(false);
-  const [errorMessage, setErrorMessage] = useState(null);
   const [resData, setResData] = useState([]);
 
   const [getPropertyDetails] = useGetPropertyDetailsMutation();
@@ -58,7 +57,6 @@ const ListingDetail = () => {
               size={resData?.size}
               price={resData?.price}
               address={resData?.title}
-              image={resData?.images[0]}
               state={resData?.address}
               rentType={resData?.type}
               description={resData?.description}

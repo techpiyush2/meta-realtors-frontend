@@ -65,7 +65,7 @@ const Footer = () => {
             <div className="w-28 ">
               <img src={Logo} alt="meta-realtors" className="w-full" />
             </div>
-            <p className="font-Poppins flex   w-72  text-white my-4 text-center lg:text-left">
+            <p className="font-Poppins flex w-72  text-white my-4  lg:text-left">
               <span className="p-2">
                 <FaLocationArrow />{" "}
               </span>{" "}
