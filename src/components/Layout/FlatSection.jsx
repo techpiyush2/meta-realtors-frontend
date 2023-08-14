@@ -50,7 +50,7 @@ const FlatSection = () => {
       isActive = {property?.isActive}
       isDeleted = {property?.isDeleted}
       description ={property?.description}
-      image = {property?.images[0]} 
+      image = {property?.images} 
       type = {property?.type} 
       bedrooms = {property?.bedrooms} 
       bathrooms = {property?.bathrooms}

@@ -6,8 +6,8 @@ import { FaBath } from "react-icons/fa";
 import { MdSpaceDashboard } from "react-icons/md";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import environment from "../../redux/environment";
+import Carousel from "../Layout/Carousel";
 
-const imgPath = environment.baseUrl + 'upload/properties/'
 
 const PropertiesItem = ({
   id,
@@ -29,6 +29,9 @@ const PropertiesItem = ({
   ownerName,
 }) => {
 
+
+  
+  
   return (
     <Fragment>
       <li className="w-auto lg:w-1/4 m-2 flex flex-col bg-white rounded-3xl  shadow-md">
@@ -38,11 +41,9 @@ const PropertiesItem = ({
               <p className="font-Poppins text-bold rounded-full text-orange  absolute bg-white p-2 py-1 mt-2 ml-2">
                 {type}
               </p>
-              <img
-                className="h-60 lg:h-40 xl:h-52 w-full object-cover rounded-2xl"
-                src={imgPath + image}
-                alt="real estate"
-              />
+              {console.log(image)}
+              <Carousel slides={image} />
+           
             </div>
             <div className="flex px-1 mt-2 mb-1">
               <div className="mr-1">

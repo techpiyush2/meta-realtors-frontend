@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../../redux/features/authSlice";
-import Logo from "../../assets/Logo.png";
+import Logo from "../../assets/logo.png";
 import { TiThMenu } from "react-icons/ti";
 import { CgClose } from "react-icons/cg";
 import { FaUser } from "react-icons/fa";
@@ -185,12 +185,6 @@ const MainHeader = () => {
               Blogs
             </NavLink>
           </li>
-          <li className=" hover:text-blue ">
-            <NavLink to="/about-us" activeclassname="text-blue" className="px-4 ">
-              About Us
-            </NavLink>
-          </li>
-
         </ul>
      <ul className="hidden lg:flex text-ash">
           <li className=" hover:text-blue ">
@@ -211,6 +205,11 @@ const MainHeader = () => {
           <li className=" hover:text-blue ">
             <NavLink to="/contact-us" activeclassname="text-blue" className="px-4 ">
               Contact Us
+            </NavLink>
+          </li>
+          <li className=" hover:text-blue ">
+            <NavLink to="/about-us" activeclassname="text-blue" className="px-4 ">
+              About Us
             </NavLink>
           </li>
         </ul>

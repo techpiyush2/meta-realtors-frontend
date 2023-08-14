@@ -1,7 +1,6 @@
 import React, { Fragment } from "react";
 import Hero from "../components/Layout/Hero";
 import Purpose from "../components/Layout/Purpose";
-import OurService from "../components/Layout/OurService";
 import Blog from "../components/Layout/BlogSection";
 import Testimonial from "../components/Layout/Testimonial";
 import FAQs from "../components/Layout/FAQs";
@@ -18,7 +17,6 @@ const HomePage = () => {
     <Fragment>
       <Hero />
       <Purpose />
-      
       <FlatSection/>
       <PlotSection/>
       <KothiSection/>
