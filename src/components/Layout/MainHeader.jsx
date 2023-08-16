@@ -44,7 +44,7 @@ const MainHeader = () => {
     <div className="w-11/12 max-w-2xl mt-4 lg:hidden">
       <ul className=" flex-col px-6 text-ash  ">
         <li className="py-3  hover:text-blue " >
-          <NavLink to="/home" activeclassname="text-blue" onClick={menuHandler}>
+          <NavLink to="/" activeclassname="text-blue" onClick={menuHandler}>
             Home
           </NavLink>
         </li>

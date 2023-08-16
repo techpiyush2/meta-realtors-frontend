@@ -35,7 +35,7 @@ const LoginForm = () => {
       }
       dispatch(login(user.data.token));
       dispatch(setActiveUser(user.data.userInfo.email));
-      navigate("/home");
+      navigate("/");
    
     } catch (error) {
       console.log('error something', error);

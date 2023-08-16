@@ -15,7 +15,7 @@ import Invest from './pages/Invest';
 import AgentsList from './components/Layout/AgentsList';
 import Flat from "./pages/Flat"
 import AboutUs from "./pages/AboutUs"
-import HomeLoan from "./pages/HomeLoan"
+import HomeLoanPage from "./pages/HomeLoan"
 import Kothi from "./pages/Kothi"
 import BuyPage from './pages/BuyPage';
 import SellPage from './pages/SellPage';
@@ -26,6 +26,7 @@ function App() {
     <Layout>
       <Routes>
         
+        <Route path="/" element={<HomePage/>}/>
         <Route path="/home" element={<HomePage/>}/>
 
         <Route path="/listings" exact element={<Listings />}/>
@@ -40,7 +41,7 @@ function App() {
         <Route path="/buy" element={<BuyPage/>}/>
         <Route path="/sell" element={<SellPage/>}/>
         
-        <Route path="/home-loan" element={<HomeLoan />}/>
+        <Route path="/home-loan" element={<HomeLoanPage />}/>
         <Route path="/about-us" element={<AboutUs />}/>
         <Route path="/contact-us" element={<Invest />}/>
         

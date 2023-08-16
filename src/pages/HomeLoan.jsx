@@ -1,22 +1,16 @@
-import React, { useEffect, useRef } from "react";
-import HomeLoanPage from "../components/Layout/HomeLoan";
+import HomeLoan from "../components/Layout/HomeLoan";
 import Footer from "../components/Layout/Footer";
-
-const HomeLoan = () => {
-  const divRef = useRef();
-
-  useEffect(() => {
-    divRef.current.scrollIntoView({ behavior: "smooth" });
-  });
-
+import Calculator from "../components/Layout/Calculator";
+const HomeLoanPage = () => {
   return (
     <>
-      <section className="mx-auto bg-silverLite pb-80" ref={divRef}>
-        <HomeLoanPage />
+      <section className="mx-auto bg-silverLite mt-200 pb-80">
+        <HomeLoan />
+        <Calculator/>
       </section>
       <Footer />
     </>
   );
 };
 
-export default HomeLoan;
+export default HomeLoanPage;
