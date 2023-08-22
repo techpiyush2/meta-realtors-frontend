@@ -44,8 +44,6 @@ export default function Carousel({
           <ChevronRight size={20} />
         </button>
       </div>
-
-
     </div>
   );
 }

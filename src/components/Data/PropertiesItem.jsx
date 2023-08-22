@@ -41,7 +41,7 @@ const PropertiesItem = ({
               <p className="font-Poppins text-bold rounded-full text-orange  absolute bg-white p-2 py-1 mt-2 ml-2">
                 {type}
               </p>
-              {console.log(image)}
+              {/* {console.log(image)} */}
               <Carousel slides={image} />
            
             </div>

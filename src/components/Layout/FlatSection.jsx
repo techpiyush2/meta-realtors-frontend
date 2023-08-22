@@ -78,7 +78,7 @@ const FlatSection = () => {
             </p>
           </div>
           <div className="lg:pr-4 pb-3 pt-5">
-            <Link to="/plots">
+            <Link to="/flats">
               <button className="font-Poppins bg-silverLite border-2 border-blue text-blue font-medium text-base px-8 py-2 rounded-md shadow-lg hover:bg-blue hover:text-white">
                 See More
               </button>
