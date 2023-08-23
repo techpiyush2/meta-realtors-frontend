@@ -29,7 +29,7 @@ const Invest = () => {
       </div>
       <div className="px-auto lg:px-16 my-16">
         <h1 className="font-Poppins font-bold text-3xl text-center mb-4">
-        WHAT TO DO INVEST IN PROPERTY?
+        WHAT TO DO TO INVEST IN PROPERTY?
         </h1>
         <h3 className="font-Poppins font-bold text-2xl text-center mb-4">
         Call us at <span className="text-blue"> 7973740282</span> or email us at <span className="text-blue"> metarealtors1@gmail.com</span>

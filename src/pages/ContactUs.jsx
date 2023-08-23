@@ -1,8 +1,9 @@
 import React, { useEffect, useRef } from "react";
-import AboutPage from "../components/Layout/About";
 import Footer from "../components/Layout/Footer";
+import Contact from "../components/Layout/ContactUs";
+import FAQs from "../components/Layout/FAQs";
 
-const AboutUs = () => {
+const ContactUsPage = () => {
   const divRef = useRef();
 
   useEffect(() => {
@@ -12,11 +13,13 @@ const AboutUs = () => {
   return (
     <>
       <section  className="bg-silver pt-20" ref={divRef}>
-        <AboutPage />
+        <Contact />
       </section>
+      <FAQs />
+      
       <Footer />
     </>
   );
 };
 
-export default AboutUs;
+export default ContactUsPage;

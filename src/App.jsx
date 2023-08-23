@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 // import { useSelector } from "react-redux";
-
+import ContactUsPage from './pages/ContactUs';
 import HomePage from "./pages/HomePage";
 import Listings from "./pages/Listings";
 import ListingDetail from "./pages/ListingDetail";
@@ -22,13 +22,13 @@ import SellPage from './pages/SellPage';
 import BlogDetailPage from './pages/BlogDetailPage';
 function App() {
   // const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
-
+  const activeLink = "text-blue-700 font-bold";
   return (
     <Layout>
       <Routes>
         
         <Route path="/" element={<HomePage/>}/>
-        <Route path="/home" element={<HomePage/>}/>
+        <Route path="/home" className={({ isActive }) => (isActive ? activeLink : "")} element={<HomePage/>}/>
 
         <Route path="/listings" exact element={<Listings />}/>
         <Route path="/listings/:propertyId" element={<ListingDetail />} />
@@ -44,7 +44,7 @@ function App() {
         
         <Route path="/home-loan" element={<HomeLoanPage />}/>
         <Route path="/about-us" element={<AboutUs />}/>
-        <Route path="/contact-us" element={<Invest />}/>
+        <Route path="/contact-us" element={<ContactUsPage />}/>
         
         <Route path="/invest" element={<Invest />}/>
         <Route path="/agentsList" element={<AgentsList />}/>

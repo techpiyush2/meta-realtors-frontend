@@ -13,7 +13,7 @@ const AskQuestion = () => {
           <p className="mb-4">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit
           </p>
-          <form action="#">
+          <form className="text-black" action="#">
             <div className="grid grid-cols-2 gap-5">
               <input
                 type="text"
