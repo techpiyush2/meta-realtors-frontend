@@ -1,13 +1,20 @@
 
 import { apiSlice } from '../features/apiSlice';
-const USERS_URL = '/api/v1/blog';
+const Blog_URL = '/api/v1/blog';
 
 export const blogApiSlice
  = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     blogList: builder.mutation({
       query: (data) => ({
-        url: `${USERS_URL}/list`,
+        url: `${Blog_URL}/list`,
+        method: 'POST',
+        body: data,
+      }),
+    }),
+    blogDetail: builder.mutation({
+      query: (data) => ({
+        url: `${Blog_URL}/details`,
         method: 'POST',
         body: data,
       }),
@@ -15,4 +22,4 @@ export const blogApiSlice
   }),
 });
 
-export const { useBlogListMutation } = blogApiSlice;
+export const { useBlogListMutation, useBlogDetailMutation } = blogApiSlice;

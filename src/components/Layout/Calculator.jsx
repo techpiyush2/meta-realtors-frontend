@@ -1,36 +1,207 @@
-import { Grid } from "@mui/material";
-import { Container } from "@mui/system";
-import React, { useState } from "react";
-import Result from "../Common/Result";
-import SliderSelect from "../Common/SliderSelect";
-import TenureSelect from "../Common/TenureSelect";
+import { useState } from "react";
+import { Typography, Button, Box, TextField } from "@mui/material";
+import Grid from "@mui/material/Grid";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableRow from "@mui/material/TableRow";
+import Paper from "@mui/material/Paper";
+import FormControl from "@mui/material/FormControl";
+import Container from "@mui/material/Container";
+import Card from "@mui/material/Card";
+import { styled } from '@mui/material/styles';
+import { teal } from '@mui/material/colors';
+import { Bold } from "react-feather";
 
-function calculator() {
-  const [data, setData] = useState({
-    homeValue: 3000,
-    downPayment: 3000 * 0.2,
-    loanAmount: 3000 * 0.8,
-    loanTerm: 5,
-    interestRate: 5,
-    monthlyPayment: 0,
-  });
+export default function LoanCalculator() {
+  const [amount, setAmount] = useState(0);
+  const [interest, setInterest] = useState(0);
+  const [time, setTime] = useState(0);
+  const [emi, setEmi] = useState(0);
+  const [totalinterest, setTotalinterest] = useState(0);
+  const [principal, setPrincipal] = useState(0);
 
+  
+  const ColorButton = styled(Button)(({ theme }) => ({
+    color: theme.palette.getContrastText(teal[500]),
+    backgroundColor: teal[500],
+     fontSize: 16,
+    '&:hover': {
+      backgroundColor: teal[700],
+    },
+  }));
+  
+  const handlePrincipalchange = (event) => {
+    setPrincipal(event.target.value);
+  };
+  const handleInterestchange = (event) => {
+    setInterest(event.target.value);
+  };
+  const handleTimechange = (event) => {
+    setTime(event.target.value);
+  };
+
+  const calculateLoan = () => {
+    if (principal > 0 && interest > 0 && time > 0) {
+      let p = parseFloat(principal);
+      let r = parseFloat(interest);
+      let n = parseFloat(time);
+
+      let actualRate = parseFloat(r / 12 / 100);
+
+      let calcemi =
+        p *
+        actualRate *
+        (Math.pow(1 + actualRate, n) / (Math.pow(1 + actualRate, n) - 1));
+
+      setEmi(Math.round(calcemi));
+      setAmount(Math.round(calcemi * n));
+      setTotalinterest(Math.round(calcemi * n - p));
+    } else {
+      toast.error("Amount, Interest and Period must be greater than 0!", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: true,
+        toastId: "id",
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+    }
+  };
 
   return (
-    <div className="mt-16 h-auto pb-10 lg:pt-6 overflow-hidden flex justify-center items-center">
-      <Container maxWidth="xl" sx={{marginTop:4}}>
-        <Grid container spacing={5} alignItems="center">
-          <Grid item xs={12} md={6}>
-            <SliderSelect data={data} setData={setData} />
-            <TenureSelect data={data} setData={setData}/>
-          </Grid>
-          <Grid item xs={12} md={6}>
-            <Result data={data}/>
-          </Grid>
-        </Grid>
+    <>
+      <ToastContainer />
+      <Box sx={{ m: 10 }} />
+      <Container >
+        <Card>
+          <div style={{ overflowY: "auto", padding: "40px" }}>
+            <Typography variant="h5" align="center">
+              Loan Calculator
+            </Typography>
+            <Box sx={{ m: 2 }} />
+            <Grid container spacing={2}>
+              <Grid item md={6} xs={12}>
+                <Box sx={{ m: 2 }} />
+                <TextField
+                  label="Enter loan Amount"
+                  type="number"
+                  variant="outlined"
+                  name="loan_amount"
+                  onChange={handlePrincipalchange}
+                  value={principal}
+                  sx={{ minWidth: "92%" }}
+                />
+                <Box sx={{ m: 2 }} />
+                <TextField
+                  label="Enter interest rate"
+                  variant="outlined"
+                  type="number"
+                  name="interest_rate"
+                  onChange={handleInterestchange}
+                  value={interest}
+                  sx={{ minWidth: "92%" }}
+                />
+                <Box sx={{ m: 2 }} />
+                <TextField
+                  label="Enter loan period in month"
+                  variant="outlined"
+                  type="number"
+                  name="loan_period_in_month"
+                  onChange={handleTimechange}
+                  value={time}
+                  sx={{ minWidth: "92%" }}
+                />
+                <Box
+                  m={1}
+                  display="flex"
+                  justifyContent="center"
+                  alignItems="center"
+                >
+                  <FormControl
+                    size="large"
+                    align="center"
+                    style={{ marginTop: "10px" }}
+                  >
+                    <ColorButton
+                     
+                      onClick={calculateLoan}
+                    >
+                      Calculate
+                    </ColorButton>
+                  </FormControl>
+                </Box>
+              </Grid>
+              <Grid
+                item
+                md={6}
+                xs={12}
+                alignItems="center"
+                justifyContent="center"
+              >
+                <Box sx={{ m: 2 }} />
+                <TableContainer component={Paper}>
+                  <Table aria-label="simple table">
+                    <TableBody>
+                      <TableRow>
+                        <TableCell align="center">
+                          <Typography variant="p">Loan EMI</Typography>
+                          <Box sx={{ m: 1 }} />
+                          <Typography variant="h6" className="font-bold">
+                            ₹ {emi}
+                          </Typography>
+                        </TableCell>
+                      </TableRow>
+                    </TableBody>
+                  </Table>
+                </TableContainer>
+                <Box sx={{ m: 2 }} />
+                <TableContainer component={Paper}>
+                  <Table aria-label="simple table">
+                    <TableBody>
+                      <TableRow>
+                        <TableCell align="center">
+                          <Typography variant="p">
+                            Total Interest Payable
+                          </Typography>
+                          <Box sx={{ m: 1 }} />
+                          <Typography variant="h6" className="font-bold">
+                            ₹ {totalinterest}
+                          </Typography>
+                        </TableCell>
+                      </TableRow>
+                    </TableBody>
+                  </Table>
+                </TableContainer>
+                <Box sx={{ m: 2 }} />
+                <TableContainer component={Paper}>
+                  <Table aria-label="simple table">
+                    <TableBody>
+                      <TableRow>
+                        <TableCell align="center">
+                          <Typography variant="p">
+                            Total Payment (Principal + Interest)
+                          </Typography>
+                          <Box sx={{ m: 1 }} />
+                          <Typography variant="h6" className="font-bold">
+                            ₹ {amount}
+                          </Typography>
+                        </TableCell>
+                      </TableRow>
+                    </TableBody>
+                  </Table>
+                </TableContainer>
+              </Grid>
+            </Grid>
+            <Box sx={{ m: 4 }} />
+          </div>
+        </Card>
       </Container>
-    </div>
+    </>
   );
 }
-
-export default calculator;

@@ -2,7 +2,7 @@ import React from "react";
 import SliderComponent from "./SliderComponent";
 
 const SliderSelect = ({ data, setData }) => {
-  const bank_limit = 10000;
+  const bank_limit = 10000000;
   return (
     <div>
       <SliderComponent
@@ -15,7 +15,7 @@ const SliderSelect = ({ data, setData }) => {
           });
         }}
         defaultValue={data.homeValue}
-        min={1000}
+        min={100000}
         max={bank_limit}
         steps={100}
         unit="₹"

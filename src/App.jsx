@@ -19,6 +19,7 @@ import HomeLoanPage from "./pages/HomeLoan"
 import Kothi from "./pages/Kothi"
 import BuyPage from './pages/BuyPage';
 import SellPage from './pages/SellPage';
+import BlogDetailPage from './pages/BlogDetailPage';
 function App() {
   // const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
 
@@ -49,7 +50,7 @@ function App() {
         <Route path="/agentsList" element={<AgentsList />}/>
         
         <Route path="/blog" exact element={ <Blog />}/>
-        <Route path="/blog/:blogId" element={ <Blog />}/>
+        <Route path="/blog/:blogId" element={ <BlogDetailPage />}/>
   
         <Route path="/signup" exact element={ <Signup />}/>
         <Route path="/login" exact element={ <Login />}/>

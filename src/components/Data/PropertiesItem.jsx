@@ -5,7 +5,6 @@ import { RiHotelBedFill } from "react-icons/ri";
 import { FaBath } from "react-icons/fa";
 import { MdSpaceDashboard } from "react-icons/md";
 import { HiOutlineLocationMarker } from "react-icons/hi";
-import environment from "../../redux/environment";
 import Carousel from "../Layout/Carousel";
 
 
@@ -29,9 +28,6 @@ const PropertiesItem = ({
   ownerName,
 }) => {
 
-
-  
-  
   return (
     <Fragment>
       <li className="w-auto lg:w-1/4 m-2 flex flex-col bg-white rounded-3xl  shadow-md">
