@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import OurServiceImage from "../../assets/hero2.png";
 import { AiFillCheckCircle } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 const About = () => {
   return (
@@ -12,7 +13,7 @@ const About = () => {
            
           </h1>
           <p className="text-left text-ash">
-          Meta Realtors is the best Real Estate Company of Mohali. We operate in all areas of Tri City, Starting from Mohali, Kharar, Kurali, Zirakpur, Panchkula and Chandigarh. We are into Real Estate business since 5 years. We majorly deals in investments and self-purchase of
+          Meta Realtors is the best Real Estate Company of Mohali. We operate in all areas of Tri City, Starting from Mohali, Kharar, Kurali, Zirakpur, Panchkula and Chandigarh. We are into Real Estate business since 5 years. We majorly deal in investments and sale-purchase of
           </p>  
          
         </div>
@@ -22,15 +23,15 @@ const About = () => {
           
             <div className="flex ">
               <div className="m-8">
-             
+
                
                 <h2 className="flex items-center text-ash mb-2">
                   <AiFillCheckCircle className="text-blue mr-2" />
-                  Trust
+                  Plots
                 </h2>
                
                 <h2 className="flex items-center text-ash mb-2">
-                  <AiFillCheckCircle className="text-blue mr-2" /> Service
+                  <AiFillCheckCircle className="text-blue mr-2" /> Flats
                 </h2>
                 
                 <h2 className="flex items-center text-ash mb-2">
@@ -71,7 +72,7 @@ const About = () => {
             </div>
             <div className=" pt-6">
               <button className=" bg-blue text-white font-bold text-md px-8 py-3 rounded-lg shadow-lg">
-                See More
+               <Link to="/listings" > See More</Link>
               </button>
             </div>
           </div>

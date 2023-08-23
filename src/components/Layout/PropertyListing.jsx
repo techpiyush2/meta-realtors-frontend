@@ -16,7 +16,7 @@ const Properties = () => {
   const [getPropertyList] = useGetPropertyListMutation();
 
   const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage, setPostsPerPage] = useState(6);
+  const [postsPerPage, setPostsPerPage] = useState(12);
   
   
   useEffect(()=>{

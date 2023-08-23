@@ -107,6 +107,22 @@ export default function LoanCalculator() {
                   value={interest}
                   sx={{ minWidth: "92%" }}
                 />
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
                 <Box sx={{ m: 2 }} />
                 <TextField
                   label="Enter loan period in month"

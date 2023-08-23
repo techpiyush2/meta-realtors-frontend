@@ -30,7 +30,7 @@ const PropertiesItem = ({
 
   return (
     <Fragment>
-      <li className="w-auto lg:w-1/4 m-2 flex flex-col bg-white rounded-3xl  shadow-md">
+      <li className="w-auto lg:w-1/5 m-2 flex flex-col bg-white rounded-3xl  shadow-md">
         <div>
           <div className="py-2 px-2">
             <div className="w-auto p-1 ">

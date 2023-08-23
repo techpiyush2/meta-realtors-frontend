@@ -14,7 +14,7 @@ const Flat = () => {
   const [errorMessage, setErrorMessage] = useState(null);
   const [resData, setResData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage, setPostsPerPage] = useState(6);
+  const [postsPerPage, setPostsPerPage] = useState(12);
   const [propertyList] = useGetPropertyListMutation();
   
   useEffect(()=>{

@@ -35,13 +35,13 @@ const propertyText = [
   { id: 1, text: "Plots", link: "/plots" },
   { id: 2, text: "Flats", link: "/flats" },
   { id: 3, text: "Kothi And Villa", link: "/kothi-villas" },
-  { id: 4, text: "Explore More", link: "/properties" },
+  { id: 4, text: "Explore More", link: "/listings" },
 ];
 
 const aboutText = [
   { id: 1, text: "Our Company", link: "/about-us" },
-  { id: 2, text: "Invest", link: "invest" },
-  { id: 3, text: "Our Blogs", link: "/blogs" },
+  { id: 2, text: "Invest", link: "/invest" },
+  { id: 3, text: "Our Blogs", link: "/blog" },
   { id: 4, text: "Our Brands", link: "/brands" },
 ];
 

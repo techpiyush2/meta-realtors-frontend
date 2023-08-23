@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 import Footer from "../components/Layout/Footer";
 import FAQs from "../components/Layout/FAQs";
 import PropertyDetailItems from "../components/Data/PropertyDetailItems";
-
 import Loader from "../components/UI/Loader";
 import Error from "../components/UI/Error";
 
@@ -43,7 +42,7 @@ const ListingDetail = () => {
 
   return (
     <Fragment>
-      
+;''
       <section
         className="mx-auto bg-silver px-2 md:px-16 lg:px-20 py-20 pt-20 md:py-16"
       >
