@@ -1,7 +1,5 @@
 import React, { Fragment } from "react";
-import { FiClock } from "react-icons/fi";
 import { Link } from "react-router-dom";
-import BlogImage from "../../assets/Blog3.jpg";
 import environment from "../../redux/environment";
 const imgPath = environment.baseUrl + 'upload/blogs/'
 
