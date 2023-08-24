@@ -1,11 +1,12 @@
 import HomeLoan from "../components/Layout/HomeLoan";
 import Footer from "../components/Layout/Footer";
 import Calculator from "../components/Layout/Calculator";
+import Hero from "../components/Layout/CalculatorHero";
 const HomeLoanPage = () => {
   return (
     <>
-      <section className="mx-auto bg-silverLite mt-200 pb-80">
-        <HomeLoan />
+    <Hero />
+      <section className="mx-auto bg-silverLite">
         <Calculator/>
       </section>
       <Footer />

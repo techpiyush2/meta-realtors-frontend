@@ -14,7 +14,6 @@ import Container from "@mui/material/Container";
 import Card from "@mui/material/Card";
 import { styled } from '@mui/material/styles';
 import { teal } from '@mui/material/colors';
-import { Bold } from "react-feather";
 
 export default function LoanCalculator() {
   const [amount, setAmount] = useState(0);
@@ -24,15 +23,6 @@ export default function LoanCalculator() {
   const [totalinterest, setTotalinterest] = useState(0);
   const [principal, setPrincipal] = useState(0);
 
-  
-  const ColorButton = styled(Button)(({ theme }) => ({
-    color: theme.palette.getContrastText(teal[500]),
-    backgroundColor: teal[500],
-     fontSize: 16,
-    '&:hover': {
-      backgroundColor: teal[700],
-    },
-  }));
   
   const handlePrincipalchange = (event) => {
     setPrincipal(event.target.value);
@@ -78,10 +68,11 @@ export default function LoanCalculator() {
     <>
       <ToastContainer />
       <Box sx={{ m: 10 }} />
-      <Container >
+      
+      <Container  >
         <Card>
           <div style={{ overflowY: "auto", padding: "40px" }}>
-            <Typography variant="h5" align="center">
+            <Typography variant="h4" color={'#008080'} align="center">
               Loan Calculator
             </Typography>
             <Box sx={{ m: 2 }} />
@@ -107,22 +98,6 @@ export default function LoanCalculator() {
                   value={interest}
                   sx={{ minWidth: "92%" }}
                 />
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
                 <Box sx={{ m: 2 }} />
                 <TextField
                   label="Enter loan period in month"
@@ -144,12 +119,11 @@ export default function LoanCalculator() {
                     align="center"
                     style={{ marginTop: "10px" }}
                   >
-                    <ColorButton
-                     
-                      onClick={calculateLoan}
-                    >
-                      Calculate
-                    </ColorButton>
+                    
+              <button onClick={calculateLoan} className=" bg-blue text-white font-bold text-md px-8 py-3 rounded-lg shadow-lg">
+               Calculate
+              </button>
+                   
                   </FormControl>
                 </Box>
               </Grid>
