@@ -13,7 +13,8 @@ import { Link } from "react-router-dom";
 const Contact = () => {
   
   const socialIcons = [
-    { id: 1, icon: <FaTwitter /> },
+    { id: 1, icon: <FaTwitter />, link : "https://twitter.com/metarealtors1" }
+,
     {
       id: 2,
       icon: <FaFacebookF />,
@@ -43,24 +44,24 @@ const Contact = () => {
           </div>
           <div className="flex flex-col space-y-6">
             <div className="inline-flex space-x-2 ">
-            <p className="font-Poppins w-72 flex items-center  text-white mb-4 text-center lg:text-left">
-              <span className="p-2">
+            <p className="font-Poppins w-72 flex items-center text-white text-center lg:text-left">
+              <span className="px-2">
                 <FaPhoneAlt />{" "}
               </span>{" "}
               79737 40282
             </p>
             </div>
             <div className="inline-flex space-x-2 ">
-            <p className="font-Poppins w-72 flex  items-center text-white mb-4 text-center lg:text-left">
-              <span className="p-2 text-xl">
+            <p className="font-Poppins w-72 flex items-center text-white text-center lg:text-left">
+              <span className="px-2 text-xl">
                 <IoMdMail />{" "}
               </span>{" "}
               metarealtors1@gmail.com
             </p>
             </div>
             <div className="inline-flex space-x-2 ">
-            <p className="font-Poppins flex w-72  text-white my-4  lg:text-left">
-              <span className="p-2">
+            <p className="font-Poppins flex w-72  text-white  lg:text-left">
+              <span className="px-2">
                 <FaLocationArrow />{" "}
               </span>{" "}
               E-309, Ground Floor, Phase 8A, Industrial Area, Sector 75,
@@ -100,6 +101,16 @@ const Contact = () => {
                 <input
                   type="text"
                   placeholder="Email Address"
+                  className="ring-1 ring-blue ring-gray-300 mt-2 w-full rounded-md px-4 py-2 outline-none focus:ring-2"
+                />
+              </div>
+              <div>
+                <label htmlFor="" className="text-sm">
+                  Mobile Number
+                </label>
+                <input
+                  type="text"
+                  placeholder="Mobile Number"
                   className="ring-1 ring-blue ring-gray-300 mt-2 w-full rounded-md px-4 py-2 outline-none focus:ring-2"
                 />
               </div>

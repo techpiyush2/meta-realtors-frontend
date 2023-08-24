@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import LoginImage from "../../assets/Signup.jpg";
+import LoginImage from "../../assets/Signup2.jpg";
 import { useLoginMutation } from "../../redux/services/userSlice";
 import { login, setActiveUser } from "../../redux/features/authSlice";
 import { useDispatch } from "react-redux";
@@ -47,7 +47,7 @@ const LoginForm = () => {
 
   return (
     <>
-      <div className="font-Poppins pt-40 flex justify-center lg:justify-between px-4 md:px-16 lg:px-20">
+      <div className="font-Poppins pt-24 flex justify-center lg:justify-between px-4 md:px-16 lg:px-20">
         <div className="bg-white px-4 md:px-7 py-10 w-full lg:w-1/2 rounded-[30px] lg:rounded-[0px] lg:rounded-l-[50px] shadow-md lg:shadow">
           <div className="flex flex-col items-center pt-5">
             <h2 className="text-2xl font-medium mb-3 ">Log in to Meta Realtors</h2>
@@ -92,7 +92,7 @@ const LoginForm = () => {
           <div>
             <img
               alt="real estate"
-              className="w-full h-[40rem] rounded-r-[50px]"
+              className="w-full h-[32rem] rounded-r-[50px]"
               src={LoginImage}
             />
           </div>

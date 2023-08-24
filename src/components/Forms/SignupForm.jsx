@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import SignupImage from "../../assets/Signup.jpg";
+import SignupImage from "../../assets/Signup2.jpg";
 import { useRegisterMutation } from "../../redux/services/userSlice";
 
 
@@ -44,7 +44,7 @@ const SignupForm = () => {
 
   return (
     <>
-      <div className="font-Poppins pt-40 flex justify-center lg:justify-between px-4 md:px-16 lg:px-20">
+      <div className="font-Poppins pt-24 flex justify-center lg:justify-between px-4 md:px-16 lg:px-20">
         <div className="bg-white px-4 md:px-7 py-10 w-full lg:w-1/2 rounded-[30px] lg:rounded-[0px] lg:rounded-l-[50px] shadow-md lg:shadow">
           <div className="flex flex-col items-center pt-5">
             <h2 className="text-xl font-medium mb-4 ">
@@ -102,7 +102,7 @@ const SignupForm = () => {
           <div>
             <img
               alt="real estate"
-              className="w-full h-[40rem] rounded-r-[50px]"
+              className="w-full h-[32rem] rounded-r-[50px]"
               src={SignupImage}
             />
           </div>

@@ -13,7 +13,8 @@ import {
 import { IoMdMail } from "react-icons/io";
 
 const socialIcons = [
-  { id: 1, icon: <FaTwitter /> },
+  { id: 1, icon: <FaTwitter />, link : "https://twitter.com/metarealtors1" }
+,
   {
     id: 2,
     icon: <FaFacebookF />,

@@ -12,7 +12,8 @@ import {
 const Hero = () => {
     
     const socialIcons = [
-        { id: 1, icon: <FaTwitter /> },
+        { id: 1, icon: <FaTwitter />, link : "https://twitter.com/metarealtors1" }
+,
         {
           id: 2,
           icon: <FaFacebookF />,
