@@ -85,13 +85,7 @@ const SignupForm = () => {
                 type="password"
                 ref={passwordInputRef}
               />
-              {/* <button
-                type="button"
-                className="text-2xl text-ash relative ml-[17rem] mt-[2.5rem]"
-                onClick={handleClick}
-              >
-                {show ? <AiOutlineEye /> : <AiOutlineEyeInvisible />}
-              </button> */}
+
             </div>
             <button className="bg-blue font-medium w-full text-white py-3 rounded-lg">
               {content}

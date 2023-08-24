@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import OurServiceImage from "../../assets/hero2.png";
 import { MdOutlineEast } from "react-icons/md";
 import { BsCheckSquareFill } from "react-icons/bs";
-
+import { Link } from "react-router-dom";
 const Consult = () => {
   return (
     <Fragment>
@@ -69,7 +69,7 @@ const Consult = () => {
             </div>
             <div className=" pt-6">
               <button className=" bg-blue text-white font-bold text-md px-8 py-3 rounded-lg shadow-lg">
-                See More
+                <Link to="/listings">See More</Link>
               </button>
             </div>
           </div>
