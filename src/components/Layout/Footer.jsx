@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
-import Logo from "../../assets/footerLogo.png";
+import Logo from "../../assets/meta-logo.png";
 import {
   FaTwitter,
   FaFacebookF,
