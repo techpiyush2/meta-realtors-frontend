@@ -140,7 +140,7 @@ export default function LoanCalculator() {
                     <TableBody>
                       <TableRow>
                         <TableCell align="center">
-                          <Typography variant="p">Loan EMI</Typography>
+                          <Typography variant="p">Monthly Loan EMI</Typography>
                           <Box sx={{ m: 1 }} />
                           <Typography variant="h6" className="font-bold">
                             ₹ {emi}
