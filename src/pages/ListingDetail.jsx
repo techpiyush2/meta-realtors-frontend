@@ -42,7 +42,7 @@ const ListingDetail = () => {
 
   return (
     <Fragment>
-;''
+
       <section
         className="mx-auto bg-silver px-2 md:px-16 lg:px-20 py-20 pt-20 md:py-16"
       >
