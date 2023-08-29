@@ -65,9 +65,6 @@ const About = () => {
 
                 </h2>
                 
-            
-                
-              
               </div>
             </div>
             <div className=" pt-6">
