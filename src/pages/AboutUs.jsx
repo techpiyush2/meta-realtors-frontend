@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import AboutPage from "../components/Layout/About";
 import Footer from "../components/Layout/Footer";
+import { Helmet } from "react-helmet";
 
 const AboutUs = () => {
   const divRef = useRef();
