@@ -1,3 +1,4 @@
 export default {
-  baseUrl: 'https://metarealtors.in/',
+  // baseUrl: 'https://metarealtors.in/',
+  baseUrl: '/',
 }
