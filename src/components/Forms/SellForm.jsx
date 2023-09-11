@@ -1,10 +1,9 @@
 import React, { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import Select from "react-select";
 import { Link } from "react-router-dom";
 import { useLoginMutation } from "../../redux/services/userSlice";
-import { login, setActiveUser } from "../../redux/features/authSlice";
 import { useDispatch,useSelector } from "react-redux";
 import logo from "../../assets/logo.png";
 const LoginForm = () => {
@@ -24,38 +23,7 @@ const LoginForm = () => {
 
   const dispatch = useDispatch();
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    setIsLoading(true);
 
-    const enteredtext = textInputRef.current.value;
-    const enteredPassword = passwordInputRef.current.value;
-
-    const formData = {
-      text: enteredtext,
-      password: enteredPassword,
-    };
-
-    try {
-      const user = await logIn(formData).unwrap();
-      if (user.code === 200) {
-        toast.success(user.message);
-      } else {
-        toast.error(user.message);
-      }
-
-      if (!user) {
-        throw new Error("Authentication Failed!");
-      }
-      dispatch(login(user.data.token));
-      dispatch(setActiveUser(user.data.userInfo.text));
-      navigate("/");
-    } catch (error) {
-      console.log("error something", error);
-      toast.error("Network Error");
-    }
-    setIsLoading(false);
-  };
 
   const content = isLoading ? "Adding Property" : "Add Property";
 
