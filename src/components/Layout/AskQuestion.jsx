@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import askImage from "../../assets/aska.jpg";
 
 const AskQuestion = () => {
-  ``;
   return (
     <section className="mt-16 h-auto pb-10 lg:pt-6 overflow-hidden flex justify-center items-center">
       <img className=" brightness-75 w-auto h-[580px] rounded-lg" src={askImage} alt="" />
