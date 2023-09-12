@@ -10,7 +10,8 @@ import defaultLogo from "../../assets/Blog1.jpg";
 import { Link } from "react-router-dom";
 import environment from "../../redux/environment";
 
-const imgPath = environment.baseUrl + 'upload/properties/'
+// const imgPath = environment.baseUrl + 'upload/properties/'
+const imgPath = '/upload/properties/'
 
 const PropertyDetailItems = ({
   id,

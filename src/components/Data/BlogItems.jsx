@@ -1,7 +1,8 @@
 import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
 import environment from "../../redux/environment";
-const imgPath = environment.baseUrl + 'upload/blogs/'
+// const imgPath = environment.baseUrl + 'upload/blogs/'
+const imgPath =  '/upload/blogs/'
 
 
 const BlogItem = ({ id, title, date, image }) => {

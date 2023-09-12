@@ -7,7 +7,8 @@ export default function Carousel({
   slides,
 }) {
   const [curr, setCurr] = useState(0);
-  const imgPath = environment.baseUrl + 'upload/properties/'
+  // const imgPath = environment.baseUrl + 'upload/properties/'
+  const imgPath = '/upload/properties/'
 
   const prev = () =>
     setCurr((curr) => (curr === 0 ? slides.length - 1 : curr - 1));
