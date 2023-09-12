@@ -4,8 +4,7 @@ import environment from "../environment";
 export const propertySlice = createApi({
   reducerPath: "propertySlice",
   baseQuery: fetchBaseQuery({
-    // baseUrl: environment.baseUrl+ 'api/v1',
-    baseUrl: '/api/v1',
+    baseUrl: environment.baseUrl+ 'api/v1',
   }),
 
   endpoints: (builder) => ({

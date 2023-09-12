@@ -4,8 +4,7 @@ import BrandItem from "../Data/BrandItem";
 import environment from "../../redux/environment";
 const BrandList = () => {
   
-// const imgPath = environment.baseUrl + 'upload/brands/'
-const imgPath = '/upload/brands/'
+const imgPath = environment.baseUrl + 'upload/brands/'
 let images = []
 
    for(let i = 1; i<21; i++){

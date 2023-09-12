@@ -4,8 +4,7 @@ import environment from "../../redux/environment";
 
 const BlogDetail = (props) => {
         
-// const imgPath = environment.baseUrl + 'upload/blogs/'
-const imgPath = '/upload/blogs/'
+const imgPath = environment.baseUrl + 'upload/blogs/'
         
         
   return (
