@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/static/css/main.163b602c.css",
+    "main.js": "/static/js/main.2239bf94.js",
+    "static/media/home2.jpg": "/static/media/home2.664c7be011361927d045.jpg",
+    "static/media/hero3.jpg": "/static/media/hero3.e2a92b6779f69d0c37d0.jpg",
+    "static/media/sell.jpg": "/static/media/sell.677ecf314516dae83d2b.jpg",
+    "static/media/hero1.jpg": "/static/media/hero1.69af07d9e2a5aec89d3e.jpg",
+    "static/media/Signup2.jpg": "/static/media/Signup2.32d55db9102b2b058b03.jpg",
+    "static/media/pex1.jpg": "/static/media/pex1.03b6b9586ebecbcd2168.jpg",
+    "static/media/Client4.jpg": "/static/media/Client4.48c41e329f4fe8d467dd.jpg",
+    "static/media/buy.jpg": "/static/media/buy.9a139ce34d617d79d694.jpg",
+    "static/media/Client2.jpg": "/static/media/Client2.84e2a7afeb2ddcb7ae5b.jpg",
+    "static/media/aska.jpg": "/static/media/aska.8ed73c32cd3ccccd155e.jpg",
+    "static/media/hero2.png": "/static/media/hero2.f714c5d96b6ac670162b.png",
+    "static/media/Client1.jpg": "/static/media/Client1.4ff797231c53dab7193b.jpg",
+    "static/media/Client3.jpg": "/static/media/Client3.328b59aebd2a9d6e7ce5.jpg",
+    "static/media/Blog1.jpg": "/static/media/Blog1.32a45bea3b3ecfc397d6.jpg",
+    "static/media/loader.gif": "/static/media/loader.3d1c15a0e90bf32b78a5.gif",
+    "static/media/meta-logo.png": "/static/media/meta-logo.46bc0dd2e4ea550538c4.png",
+    "static/media/logo.png": "/static/media/logo.81a387d7a0cb2d6b238f.png",
+    "static/media/NotFound.svg": "/static/media/NotFound.9a1b0709fcfce39a41095b476ed1bcc5.svg",
+    "index.html": "/index.html",
+    "main.163b602c.css.map": "/static/css/main.163b602c.css.map",
+    "main.2239bf94.js.map": "/static/js/main.2239bf94.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.163b602c.css",
+    "static/js/main.2239bf94.js"
+  ]
+}
