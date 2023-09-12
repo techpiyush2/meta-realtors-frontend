@@ -1,5 +1,10 @@
-const environment =  {
-  baseUrl: 'http://192.168.1.4:4000/',
-}
+const environment = {
+  headers: {
+      'Content-type': 'application/json'
+  }
+};
+
+
+environment.headers['Content'] = "application/json;charset=UTF-8";
 
 export default environment
