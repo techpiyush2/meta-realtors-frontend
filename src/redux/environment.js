@@ -1,5 +1,5 @@
 const environment =  {
-  baseUrl: '/',
+  baseUrl: 'https://admin.metarealtors.in/',
 }
 
 export default environment
