@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
-import Logo from "../../assets/meta-logo.png";
+import Logo from "../../assets/navlogo.jpeg";
 import {
   FaTwitter,
   FaFacebookF,
@@ -64,7 +64,7 @@ const Footer = () => {
         <div className="flex flex-col lg:flex-row justify-between lg:mx-10 xl:mx-28 mx-0">
           <div className="flex flex-col items-center lg:items-start">
             <div className="w-28 ">
-              <img src={Logo} alt="meta-realtors" className="w-full" />
+              <img src={Logo} alt="meta-realtors" className=" w-full" />
             </div>
             <p className="font-Poppins flex w-72  text-white my-4  lg:text-left">
               <span className="p-2">

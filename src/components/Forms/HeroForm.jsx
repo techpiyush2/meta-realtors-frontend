@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { BiSearchAlt } from "react-icons/bi";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 const HeroForm = () => {
   const phraseInputRef = useRef();
@@ -29,9 +29,11 @@ const HeroForm = () => {
             className="p-3 px-4 outline-none rounded-l-lg w-full  border-2 border-blue border-r-0 bg-silver"
             ref={phraseInputRef}
           />
-          <button className="bg-blue p-4 rounded-r-lg border-2 border-blue ">
+         <Link to={'/listings'}>
+         <button className="bg-blue p-4 rounded-r-lg border-2 border-blue ">
             <BiSearchAlt className="text-white font-bold" />
           </button>
+         </Link>
         </form>
     </div>
   );

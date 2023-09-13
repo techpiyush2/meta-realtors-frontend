@@ -3,7 +3,6 @@ import HeroImage from "../../assets/pex1.jpg";
 import HeroImage2 from "../../assets/hero1.jpg";
 import HeroImage4 from "../../assets/hero3.jpg";
 import HeroForm from "../Forms/HeroForm";
-
 import HeroCarousel from "./HeroCorusel";
 
 const Hero = () => {

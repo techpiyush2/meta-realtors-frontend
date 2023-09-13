@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../../redux/features/authSlice";
-import Logo from "../../assets/meta-logo.png";
+import Logo from "../../assets/navlogo.jpeg";
 import { TiThMenu } from "react-icons/ti";
 import { CgClose } from "react-icons/cg";
 import { FaUser } from "react-icons/fa";

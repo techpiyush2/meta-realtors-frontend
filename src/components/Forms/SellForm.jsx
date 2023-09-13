@@ -5,7 +5,7 @@ import Select from "react-select";
 import { Link } from "react-router-dom";
 import { useLoginMutation } from "../../redux/services/userSlice";
 import { useDispatch,useSelector } from "react-redux";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/navlogo.jpeg";
 const LoginForm = () => {
   const options = [
     { value: "FLAT", label: "FLAT" },
