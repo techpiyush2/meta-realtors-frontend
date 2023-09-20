@@ -21,7 +21,7 @@ const MainHeader = () => {
   const handleLogout = () => {
     dispatch(logout());
     menuHandler();
-    history.replace("/login");
+    history("/login");
   };
 
   let newStr = "";

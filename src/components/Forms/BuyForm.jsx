@@ -31,7 +31,7 @@ const HeroForm = () => {
     //   return;
     // }
 
-    history.replace(`/listings`);
+    history(`/listings`);
   };
 
   return (
