@@ -135,7 +135,11 @@ const Footer = () => {
             ))}
           </div>
         </div>
+        
       </section>
+      <div className="bg-blue pb-2">
+          <p className="font-Poppins text-center text-white" >All rights reserved. Copyright 2023 Meta Realtors.</p>
+        </div>
     </Fragment>
   );
 };
