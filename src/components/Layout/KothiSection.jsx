@@ -61,6 +61,7 @@ const KothiSection = () => {
       Features ={property?.Features} 
       contactNo = {property?.contactNo} 
       ownerName = {property?.ownerName}
+      date = {property?.date}
     />
  
     );

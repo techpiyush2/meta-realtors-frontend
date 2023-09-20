@@ -59,6 +59,7 @@ const FlatSection = () => {
       Features ={property?.Features} 
       contactNo = {property?.contactNo} 
       ownerName = {property?.ownerName}
+      date = {property?.date}
     />
  
     );

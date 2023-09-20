@@ -56,6 +56,7 @@ const PlotSection = () => {
       parking = {property?.parking}
       parkOrGarden ={property?.parkOrGarden}
       Features ={property?.Features} 
+      date = {property?.date}
       contactNo = {property?.contactNo} 
       ownerName = {property?.ownerName}
     />

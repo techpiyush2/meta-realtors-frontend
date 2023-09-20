@@ -5,8 +5,9 @@ import { RiHotelBedFill } from "react-icons/ri";
 import { FaBath } from "react-icons/fa";
 import { MdSpaceDashboard } from "react-icons/md";
 import { HiOutlineLocationMarker } from "react-icons/hi";
+import { BsFillCalendarDateFill } from "react-icons/bs";
 import Carousel from "../Layout/Carousel";
-
+import moment from 'moment'
 
 const PropertiesItem = ({
   id,
@@ -25,12 +26,13 @@ const PropertiesItem = ({
   parkOrGarden,
   Features,
   contactNo,
+  date,
   ownerName,
 }) => {
 
   return (
     <Fragment>
-      <li className="w-auto lg:w-1/5 m-2 flex flex-col bg-white rounded-3xl  shadow-md">
+      <li className="w-auto lg:w-1/4 m-2 flex flex-col bg-white rounded-3xl  shadow-md">
         <div>
           <div className="py-2 px-2">
             <div className="w-auto p-1 ">
@@ -72,11 +74,18 @@ const PropertiesItem = ({
               {title}
             </h1>
              <p className=" mb-2 text-blue">₹ {price}</p>
-            <Link to={`/listings/${id}`}>
+           <div className="flex justify-between">
+           <Link to={`/listings/${id}`}>
               <button className=" bg-blue text-white font-bold text-xs px-4 py-2 rounded-lg shadow-lg">
                 Book Now
               </button>
             </Link>
+            <div className="flex items-center ">
+              <BsFillCalendarDateFill className="text-medium text-blue mr-1" />{" "}
+            {console.log(date)}
+              <p className="text-xs text-ash">{moment(date).format('DD-MM-YY')}</p>
+            </div>
+           </div>
           </div>
         </div>
       </li>

@@ -97,7 +97,7 @@ const PropertyDetailItems = ({
             <div className="flex items-center ">
               <MdSpaceDashboard className="text-medium text-blue mr-1 md:text-xl lg:text-2xl" />{" "}
               <p className="text-xs text-ash md:text-xl lg:text-xl">
-                {shortSize} sqft
+                {shortSize} Sq Yard
               </p>
             </div>
           </div>

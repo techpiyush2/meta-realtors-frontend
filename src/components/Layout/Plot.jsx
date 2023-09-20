@@ -75,6 +75,7 @@ const Plot = () => {
       parkOrGarden ={property?.parkOrGarden}
       Features ={property?.Features} 
       contactNo = {property?.contactNo} 
+      date = {property?.date}
       ownerName = {property?.ownerName}
     />
  

@@ -53,7 +53,6 @@ const ImageSlider = ({ slides }) => {
   
   const imgPath = environment.baseUrl + 'upload/properties/'
   
-  
   const [currentIndex, setCurrentIndex] = useState(0);
   const goToPrevious = () => {
     const isFirstSlide = currentIndex === 0;
@@ -65,11 +64,12 @@ const ImageSlider = ({ slides }) => {
     const newIndex = isLastSlide ? 0 : currentIndex + 1;
     setCurrentIndex(newIndex);
   };
+  
+  
   const goToSlide = (slideIndex) => {
     setCurrentIndex(slideIndex);
   };
   
-  console.log('qqqqqqqq', imgPath + slides[currentIndex]);
   
   const slideStylesWidthBackground = {
     ...slideStyles,
