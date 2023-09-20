@@ -63,7 +63,7 @@ const PropertiesItem = ({
             </div>
             <div className="flex items-center ">
               <MdSpaceDashboard className="text-medium text-blue mr-1" />{" "}
-              <p className="text-xs text-ash">{size} sqft</p>
+              <p className="text-xs text-ash">{size} Sq Yard</p>
             </div>
           </div>
           <div className="  px-4 pb-3 mb-4">

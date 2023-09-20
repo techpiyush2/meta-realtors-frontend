@@ -12,6 +12,7 @@ const LoginForm = () => {
     { value: "PLOT", label: "PLOT" },
     { value: "VILLA", label: "VILLA" },
     { value: "KOTHI", label: "KOTHI" },
+    { value: "COMMERCIAL", label: "COMMERCIAL" },
   ];
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
 
@@ -112,7 +113,7 @@ const LoginForm = () => {
                </div>
                <div className="flex flex-col mb-5">
                  <label className="text-ash text-lg" htmlFor="text">
-                   Size <span className="text-[#dc2626]">*</span>
+                   Size in Sq Yard<span className="text-[#dc2626]">*</span>
                  </label>
                  <input
                    className="bg-[#eeecec] border-[#e0dddd] focus:bg-silverLite focus:border-silver border outline-0 h-12 py-2 px-4 rounded-lg text-blue"
