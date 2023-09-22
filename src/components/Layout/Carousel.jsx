@@ -39,11 +39,6 @@ const sliderStyles = {
 };
 
 
-
-
-
-
-
 const ImageSlider = ({ slides}) => {
   
   // let slides = ['https://i.insider.com/60638bd66183e1001981966a?width=1136&format=jpeg','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQC_leiN_-EKRijxYHmntfWMZqCI8Idw1gD2YF5SSJJQCL3wCz8zjiO87WRrWqcNN0YFCc&usqp=CAU']
@@ -69,7 +64,7 @@ const ImageSlider = ({ slides}) => {
   };
 
   return (
-    <div style={sliderStyles}>
+    <div className="z-0" style={sliderStyles}>
       {console.log( imgPath + slides[currentIndex])}
       <div>
         <div onClick={goToPrevious} style={leftArrowStyles}>

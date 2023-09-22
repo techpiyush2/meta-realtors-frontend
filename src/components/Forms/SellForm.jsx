@@ -24,8 +24,6 @@ const LoginForm = () => {
 
   const dispatch = useDispatch();
 
-
-
   const content = isLoading ? "Adding Property" : "Add Property";
 
   return (

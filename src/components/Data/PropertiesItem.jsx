@@ -36,7 +36,7 @@ const PropertiesItem = ({
         <div>
           <div className="py-2 px-2">
             <div className="w-auto p-1 ">
-              <p className="font-Poppins text-bold rounded-full text-orange  absolute bg-white p-2 py-1 mt-2 ml-2">
+              <p className="font-Poppins text-bold rounded-full text-orange z-20 absolute bg-white p-2 py-1 mt-2 ml-2">
                 {type}
               </p>
               {/* {console.log(image)} */}
