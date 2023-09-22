@@ -1,29 +1,28 @@
 import React, { Fragment } from "react";
 import PurposeItem from "../Data/PurposeItem";
-
-import { HiOutlineHome } from "react-icons/hi";
-import { FiKey } from "react-icons/fi";
-import { FaHandshake } from "react-icons/fa";
+import icon1 from '../../assets/icon2.png'
+import icon2 from '../../assets/icon3.png'
+import icon3 from '../../assets/icon4.png'
 
 const Purpose = () => {
   const purposeData = [
     {
       id: "p1",
-      icon: <HiOutlineHome />,
+      icon: icon3,
       title: "Flats",
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      description: "Most Economical and RERA approved Flats",
     },
     {
       id: "p2",
-      icon: <FiKey />,
+      icon: icon2,
       title: "Plots",
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      description: "Most Economical and RERA approved Plots",
     },
     {
       id: "p3",
-      icon: <FaHandshake />,
+      icon: icon1,
       title: "Khoties And Villas",
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      description: "Most Economical and RERA approved Villas and Kothies",
     },
   ];
 
@@ -47,8 +46,7 @@ const Purpose = () => {
             Our Main <span className="text-blue">Focus</span>
           </h1>
           <p className="text-center text-ash">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore
-            facilis libero, esse recusandae nam veniam aut accusamus.
+          Most Economical and Real Estate Regulatory Authority (RERA) approved Flats 
           </p>
         </div>
         <ul className="flex flex-col lg:flex-row my-6">{mappedList}</ul>

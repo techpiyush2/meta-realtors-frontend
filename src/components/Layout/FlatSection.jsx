@@ -75,7 +75,7 @@ const FlatSection = () => {
             </h1>
             <p className="text-left text-ash">
               Stay up to date with all the information about our listed
-              properties.
+              flats.
             </p>
           </div>
           <div className="lg:pr-4 pb-3 pt-5">
