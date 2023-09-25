@@ -74,7 +74,6 @@ const ListingDetail = () => {
           {/* {!isLoading && data.length === 0 && <Error />} */}
         </div>
       </section>
-      <FAQs />
       <Footer />
     </Fragment>
   );

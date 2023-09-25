@@ -49,7 +49,7 @@ const Purpose = () => {
           Most Economical and Real Estate Regulatory Authority (RERA) approved Flats 
           </p>
         </div>
-        <ul className="flex flex-col lg:flex-row my-6">{mappedList}</ul>
+        <ul className="flex flex-col justify-between  lg:flex-row my-6">{mappedList}</ul>
       </section>
     </Fragment>
   );

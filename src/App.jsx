@@ -20,9 +20,12 @@ import Kothi from "./pages/Kothi"
 import BuyPage from './pages/BuyPage';
 import SellPage from './pages/SellPage';
 import BlogDetailPage from './pages/BlogDetailPage';
+import { useEffect } from 'react';
 
 function App() {
+
   // const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
+  
   const activeLink = "text-blue-700 font-bold";
   return (
     <Layout>

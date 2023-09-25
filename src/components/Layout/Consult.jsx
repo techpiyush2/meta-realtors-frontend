@@ -23,7 +23,7 @@ const Consult = () => {
         </div>
         <div className="flex flex-col lg:flex-row items-center justify-between">
           <div className="px-auto w-1/3 lg:px-10 lg:mr-6 md:pl-0 lg:pl-0">
-            <img className="h-full  " src={OurServiceImage} alt="Scraper" />
+            <img className="h-full min-[400px] max-[500px]::" src={OurServiceImage} alt="Scraper" />
           </div>
           <div className="mt-10 lg:mt-0 lg:mx-10">
             <h3 className="flex items-center font-Poppins text-ash  text-1xl ">
@@ -35,8 +35,7 @@ const Consult = () => {
               Your Comfort Is Our Priority
             </h1>
             <p className="font-Poppins text-ash mb-4">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. optio
-              laborum sunt molestias necessitatibus!
+            Discover a new level of comfort in our meticulously crafted properties, where luxury and tranquility seamlessly intertwine to create an extraordinary living experience :
             </p>
             <div className="flex mt-2">
               <div className="pr-5">

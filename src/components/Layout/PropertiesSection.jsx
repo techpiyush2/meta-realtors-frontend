@@ -33,7 +33,9 @@ const Properties = () => {
     
   },[])
   
-  
+ const  goToTop = () =>{
+  window.scrollTo(0, 0)
+ }
   
 
   const mappedList = resData?.map((property) => {
@@ -72,8 +74,8 @@ const Properties = () => {
           {/* {!isFetching && mappedList?.length === 0 && <Error />} */}
         </ul>
         <div className="flex items-center  justify-center px-4 pb-3 pt-5">
-          <Link to="/listings">
-            <button className="font-Poppins bg-silverLite border-2 border-blue text-blue font-medium text-base px-8 py-2 rounded-md shadow-lg hover:bg-blue hover:text-white">
+          <Link to="/listings" >
+            <button onClick={goToTop} className="font-Poppins bg-silverLite border-2 border-blue text-blue font-medium text-base px-8 py-2 rounded-md shadow-lg hover:bg-blue hover:text-white">
               Explore All
             </button>
           </Link>

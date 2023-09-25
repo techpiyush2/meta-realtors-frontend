@@ -1,14 +1,15 @@
 import React from "react";
-import HeroImage from "../../assets/pex1.jpg";
-import HeroImage2 from "../../assets/hero1.jpg";
-import HeroImage4 from "../../assets/hero3.jpg";
+import HeroImage from "../../assets/front_hero/pex1.jpg";
+import HeroImage1 from "../../assets/Property5.jpg";
+import HeroImage2 from "../../assets/front_hero/hero1.jpg";
+import HeroImage4 from "../../assets/front_hero/hero3.jpg";
 import HeroForm from "../Forms/HeroForm";
 import HeroCarousel from "./HeroCorusel";
 
 const Hero = () => {
   return (
     <section className=" h-auto lg:pt-4 overflow-hidden flex justify-center items-center">
-      <HeroCarousel slides= {[HeroImage,HeroImage4, HeroImage2]}/>
+      <HeroCarousel slides= {[HeroImage,HeroImage1,HeroImage4, HeroImage2]}/>
       <div className=" flex justify-center px-10 absolute  z-30 flex-col ">
         <div className="lg:px-16  lg:pr-0 text-center">
           <h1 className="text-5xl mb-4 text-white font-semibold tracking-widest font-Poppins">Time to Meet Your Dream Home
