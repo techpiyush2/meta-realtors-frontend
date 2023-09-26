@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import LoginImage from "../../assets/Signup2.jpg";
 import { useLoginMutation } from "../../redux/services/userSlice";
-import { login, setActiveUser } from "../../redux/features/authSlice";
+import { login, setActiveUser,setActiveUserId } from "../../redux/features/authSlice";
 import { useDispatch } from "react-redux";
 import { ToastContainer, toast } from 'react-toastify';
 
@@ -35,6 +35,8 @@ const LoginForm = () => {
         throw new Error("Authentication Failed!");
       }
       dispatch(login(user.data.token));
+      dispatch(setActiveUserId(user.data.userInfo._id));
+      
       dispatch(setActiveUser(user.data.userInfo.email));
       navigate("/");
    

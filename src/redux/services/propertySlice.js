@@ -15,6 +15,20 @@ export const propertySlice = createApi({
         body: data,
       }),
     }),
+    createProperty: builder.mutation({
+      query: (data) => ({
+        url: `property/create`,
+        method: 'POST',
+        body: data,
+      }),
+    }),
+    createUpload: builder.mutation({
+      query: (data) => ({
+        url: `property/uploadImage`,
+        method: 'POST',
+        body: data,
+      }),
+    }),
     getPropertyDetails: builder.mutation({
       query: (data) => ({
         url: `property/details`,
@@ -31,5 +45,7 @@ export const propertySlice = createApi({
 export const {
   useGetPropertyListMutation,
   useGetPropertyDetailsMutation,
+  useCreatePropertyMutation,
+  useCreateUploadMutation,
   useGetAgencyListQuery,
 } = propertySlice;
