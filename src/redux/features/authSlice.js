@@ -7,6 +7,7 @@ const initialState = {
   isAuthenticated: !!initialToken,
   token: initialToken || null,
   user: initialUser || "",
+  userId: initialUser || "",
 };
 
 const authSlice = createSlice({
