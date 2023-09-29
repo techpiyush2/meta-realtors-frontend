@@ -24,7 +24,7 @@ const Properties = () => {
       setIsFetching(true);
   
       try {
-        const res = await getPropertyList().unwrap();
+        const res = await getPropertyList({isActive : true}).unwrap();
         if(res.code===200){
           toast.success(res.message)
         }else{
