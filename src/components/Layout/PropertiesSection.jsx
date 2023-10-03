@@ -17,7 +17,7 @@ const Properties = () => {
     const handleSubmit = async (event) => {
       setIsFetching(true);
       try {
-        const res = await propertyList().unwrap();
+        const res = await propertyList({isActive : true}).unwrap();
         
         if (!res) {
           throw new Error("Data Fetch Failed!");

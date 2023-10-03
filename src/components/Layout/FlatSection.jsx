@@ -18,7 +18,7 @@ const FlatSection = () => {
       setIsFetching(true);
   
       try {
-        let dataToBeSend = {type : ["FLAT"]}
+        let dataToBeSend = {type : ["FLAT"],isActive : true}
         
         const res = await propertyList(dataToBeSend).unwrap();
         console.log(res);

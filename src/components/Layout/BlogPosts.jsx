@@ -19,7 +19,7 @@ const BlogPosts = () => {
       setIsLoading(true);
   
       try {
-        const res = await blogList().unwrap();
+        const res = await blogList({isActive : true}).unwrap();
         if(res.code===200){
           toast.success(res.message)
         }else{

@@ -22,7 +22,7 @@ const Kothi = () => {
       setIsFetching(true);
   
       try {
-        let dataToBeSend = {type : ["VILLA", 'KOTHI']}
+        let dataToBeSend = {type : ["VILLA", 'KOTHI'],isActive : true}
         const res = await propertyList(dataToBeSend).unwrap();
         if(res.code===200){
           toast.success(res.message)

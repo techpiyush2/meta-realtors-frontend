@@ -22,7 +22,7 @@ const Plot = () => {
       setIsFetching(true);
   
       try {
-        let dataToBeSend = {type : ["PLOT"]}
+        let dataToBeSend = {type : ["PLOT"],isActive : true}
         
         const res = await propertyList(dataToBeSend).unwrap();
         

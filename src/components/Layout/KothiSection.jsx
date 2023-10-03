@@ -18,7 +18,7 @@ const KothiSection = () => {
       setIsFetching(true);
   
       try {
-        let dataToBeSend = {type : ["VILLA", 'KOTHI']}
+        let dataToBeSend = {type : ["VILLA", 'KOTHI'],isActive : true}
         
         const res = await propertyList(dataToBeSend).unwrap();
         console.log(res);

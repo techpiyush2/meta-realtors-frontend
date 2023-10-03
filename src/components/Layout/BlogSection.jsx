@@ -20,7 +20,7 @@ const Blog = () => {
       setIsLoading(true);
   
       try {
-        const res = await blogList().unwrap();
+        const res = await blogList({isActive : true}).unwrap();
         console.log(res);
         if (!res) {
           throw new Error("Data Fetch Failed!");
