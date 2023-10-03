@@ -43,66 +43,76 @@ const MainHeader = () => {
   const mobileMenu = (
     <div className="w-11/12 max-w-2xl mt-4 lg:hidden">
       <ul className=" flex-col px-6 text-ash  ">
-        <li className="py-3  hover:text-blue " >
+        <li className="py-2  hover:text-blue " >
           <NavLink to="/" activeclassname="text-blue" onClick={menuHandler}>
             Home
           </NavLink>
         </li>
-        <li className="py-3  hover:text-blue ">
-          <NavLink
-            to="/listings"
-            activeclassname="text-blue"
-            onClick={menuHandler}
-          >
-            Properties
-          </NavLink>
-        </li>
-        <li className="py-3  hover:text-blue ">
-          <NavLink
-            to="/brands"
-            activeclassname="text-blue"
-            onClick={menuHandler}
-          >
-           Our Brands
-          </NavLink>
-        </li>
-        <li className="py-3  hover:text-blue ">
-          <NavLink
-            to="/brands"
-            activeclassname="text-blue"
-            onClick={menuHandler}
-          >
-            Invest
-          </NavLink>
-        </li>
-        <li className="py-3  hover:text-blue ">
-          <NavLink
-            to="/brands"
-            activeclassname="text-blue"
-            onClick={menuHandler}
-          >
-            Plots
-          </NavLink>
-        </li>
-        <li className="py-3  hover:text-blue ">
-          <NavLink
-            to="/brands"
-            activeclassname="text-blue"
-            onClick={menuHandler}
-          >
-            Khoties And Villas
-          </NavLink>
-        </li>
-        <li className="py-3  hover:text-blue ">
-          <NavLink
-            to="/brands"
-            activeclassname="text-blue"
-            onClick={menuHandler}
-          >
-            Listing
-          </NavLink>
-        </li>
-        <li className="py-3  hover:text-blue ">
+        
+      
+        <li className="py-2  hover:text-blue ">
+            <NavLink to="/brands"  onClick={menuHandler} activeclassname="text-blue" >
+
+              Our brands
+            </NavLink>
+          </li>
+          <li className="py-2  hover:text-blue ">
+            <NavLink to="/invest"  onClick={menuHandler} activeclassname="text-blue" >
+              Invest
+            </NavLink>
+          </li>
+           <li className="py-2  hover:text-blue ">
+            <NavLink to="/plots"  onClick={menuHandler} activeclassname="text-blue" >
+              Plots
+            </NavLink>
+          </li>
+          <li className="py-2  hover:text-blue ">
+            <NavLink to="/flats"  onClick={menuHandler} activeclassname="text-blue" >
+              Flats
+            </NavLink>
+          </li>
+          <li className="py-2  hover:text-blue ">
+            <NavLink to="/kothi-villas"  onClick={menuHandler} activeclassname="text-blue" >
+              Khoties & Villas
+            </NavLink>
+          </li>
+          <li className="py-2  hover:text-blue ">
+            <NavLink to="/listings"  onClick={menuHandler} activeclassname="text-blue" >
+              Listing
+            </NavLink>
+          </li>
+          <li className="py-2  hover:text-blue ">
+            <NavLink to="/blog"  onClick={menuHandler} activeclassname="text-blue" >
+              Blogs
+            </NavLink>
+          </li>
+          <li className="py-2  hover:text-blue ">
+            <NavLink to="/home-loan"  onClick={menuHandler} activeclassname="text-blue" >
+              Home Loan
+            </NavLink>
+          </li>
+          <li className="py-2  hover:text-blue ">
+            <NavLink to="/buy"  onClick={menuHandler} activeclassname="text-blue" >
+              Buy Property
+            </NavLink>
+          </li>
+          <li className="py-2  hover:text-blue ">
+            <NavLink to="/sell"  onClick={menuHandler} activeclassname="text-blue" >
+              Sell Property
+            </NavLink>
+          </li>
+          <li className="py-2  hover:text-blue ">
+            <NavLink to="/contact-us"  onClick={menuHandler} activeclassname="text-blue" >
+              Contact Us
+            </NavLink>
+          </li>
+          <li className="py-2  hover:text-blue ">
+            <NavLink to="/about-us"  onClick={menuHandler} activeclassname="text-blue" >
+              About Us
+            </NavLink>
+          </li>
+          
+        <li className="py-2 hover:text-blue ">
           <NavLink
             to="/blogs"
             activeclassname="text-blue"
