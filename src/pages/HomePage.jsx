@@ -11,6 +11,7 @@ import AssociatedProjects from "../components/Layout/AssociatedProjects";
 import PlotSection from "../components/Layout/PlotSection";
 import FlatSection from "../components/Layout/FlatSection";
 import KothiSection from "../components/Layout/KothiSection";
+import CommercialSection from "../components/Layout/CommercialSection";
 import { Helmet } from "react-helmet";
 
 const HomePage = () => {
@@ -30,7 +31,7 @@ const HomePage = () => {
       <PlotSection />
       <KothiSection />
       <Consult />
-      {/* <Properties /> */}
+      <CommercialSection/>
       <BrandList />
       <Blog />
       <AssociatedProjects />
