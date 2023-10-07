@@ -7,11 +7,8 @@ import Error from "../UI/Error";
 
 const AgentsList = () => {
 
-
   const [isLoading, setIsLoading] = useState(false);
-
   const [getPropertyList] = useGetPropertyListMutation();
-
   
   useEffect(()=>{
     const handleSubmit = async () => {

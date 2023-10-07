@@ -20,6 +20,7 @@ import Kothi from "./pages/Kothi"
 import BuyPage from './pages/BuyPage';
 import SellPage from './pages/SellPage';
 import BlogDetailPage from './pages/BlogDetailPage';
+import Commercial from './pages/Commercial';
 import { useEffect } from 'react';
 
 function App() {
@@ -43,6 +44,7 @@ function App() {
         <Route path="/flats" element={<Flat />}/>
         <Route path="/plots" element={<Plot />}/>
         <Route path="/kothi-villas" element={<Kothi/>}/>
+        <Route path="/commercial" element={<Commercial/>}/>
         
         <Route path="/buy" element={<BuyPage/>}/>
         <Route path="/sell" element={<SellPage/>}/>

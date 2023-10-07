@@ -48,19 +48,6 @@ const MainHeader = () => {
             Home
           </NavLink>
         </li>
-        
-      
-        <li className="py-2  hover:text-blue ">
-            <NavLink to="/brands"  onClick={menuHandler} activeclassname="text-blue" >
-
-              Our brands
-            </NavLink>
-          </li>
-          <li className="py-2  hover:text-blue ">
-            <NavLink to="/invest"  onClick={menuHandler} activeclassname="text-blue" >
-              Invest
-            </NavLink>
-          </li>
            <li className="py-2  hover:text-blue ">
             <NavLink to="/plots"  onClick={menuHandler} activeclassname="text-blue" >
               Plots
@@ -69,6 +56,11 @@ const MainHeader = () => {
           <li className="py-2  hover:text-blue ">
             <NavLink to="/flats"  onClick={menuHandler} activeclassname="text-blue" >
               Flats
+            </NavLink>
+          </li>
+          <li className="py-2  hover:text-blue ">
+            <NavLink to="/commercial"  onClick={menuHandler} activeclassname="text-blue" >
+              Commercial
             </NavLink>
           </li>
           <li className="py-2  hover:text-blue ">
@@ -92,11 +84,6 @@ const MainHeader = () => {
             </NavLink>
           </li>
           <li className="py-2  hover:text-blue ">
-            <NavLink to="/buy"  onClick={menuHandler} activeclassname="text-blue" >
-              Buy Property
-            </NavLink>
-          </li>
-          <li className="py-2  hover:text-blue ">
             <NavLink to="/sell"  onClick={menuHandler} activeclassname="text-blue" >
               Sell Property
             </NavLink>
@@ -114,7 +101,7 @@ const MainHeader = () => {
           
         <li className="py-2 hover:text-blue ">
           <NavLink
-            to="/blogs"
+            to="/blog"
             activeclassname="text-blue"
             onClick={menuHandler}
           >
@@ -122,7 +109,7 @@ const MainHeader = () => {
           </NavLink>
         </li>
       </ul>
-      <div className="flex justify-between py-3 pl-6">
+      <div className=" py-3 pl-6">
         <button
           className="text-blue font-medium text-base pr-5"
           onClick={isAuthenticated ? handleLogout : menuHandler}
@@ -186,17 +173,22 @@ const MainHeader = () => {
             </NavLink>
           </li>
           <li className=" hover:text-blue ">
+            <NavLink to="/commercial" activeclassname="text-blue" className="px-4 ">
+              Commercial
+            </NavLink>
+          </li>
+          <li className=" hover:text-blue ">
             <NavLink to="/listings" activeclassname="text-blue" className="px-4 ">
               Listing
             </NavLink>
           </li>
-          <li className=" hover:text-blue ">
+        </ul>
+     <ul className="hidden lg:flex text-ash">
+     <li className=" hover:text-blue ">
             <NavLink to="/blog" activeclassname="text-blue" className="px-4 ">
               Blogs
             </NavLink>
           </li>
-        </ul>
-     <ul className="hidden lg:flex text-ash">
           <li className=" hover:text-blue ">
             <NavLink to="/home-loan" activeclassname="text-blue" className="px-4 ">
               Home Loan
