@@ -30,8 +30,9 @@ const HomePage = () => {
       <FlatSection />
       <PlotSection />
       <KothiSection />
-      <Consult />
       <CommercialSection/>
+      <Consult />
+      
       <BrandList />
       <Blog />
       <AssociatedProjects />

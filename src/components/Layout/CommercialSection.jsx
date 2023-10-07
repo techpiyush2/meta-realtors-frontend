@@ -71,15 +71,15 @@ const CommercialSection = () => {
         <div className="flex flex-col md:flex-row justify-between px-auto">
           <div>
             <h1 className="font-Poppins font-bold text-2xl text-left mb-3">
-            Explore Our Listed  <span className="text-blue">Flat</span>
+            Explore Our Listed  <span className="text-blue">Commercial Properties</span>
             </h1>
             <p className="text-left text-ash">
               Stay up to date with all the information about our listed
-              flats.
+              Commercial Properties.
             </p>
           </div>
           <div className="lg:pr-4 pb-3 pt-5">
-            <Link to="/flats">
+            <Link to="/commercial">
               <button className="font-Poppins bg-silverLite border-2 border-blue text-blue font-medium text-base px-8 py-2 rounded-md shadow-lg hover:bg-blue hover:text-white">
                 See More
               </button>
