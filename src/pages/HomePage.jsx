@@ -32,7 +32,6 @@ const HomePage = () => {
       <KothiSection />
       <CommercialSection/>
       <Consult />
-      
       <BrandList />
       <Blog />
       <AssociatedProjects />
